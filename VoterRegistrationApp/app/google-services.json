@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "653196970798",
+    "project_id": "authentication-f5930",
+    "storage_bucket": "authentication-f5930.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653196970798:android:f58ed1a8374b8fbeb1c8bf",
+        "android_client_info": {
+          "package_name": "com.ryanfermo.voterregistrationapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "653196970798-e2915cb3ro58bhvp1tm4ar418mgqh5uc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOWCaqZzUqoFwU21NuXnu_eZvhkIDd0l4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "653196970798-e2915cb3ro58bhvp1tm4ar418mgqh5uc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

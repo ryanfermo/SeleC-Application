@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Voter Registration App</string>
+
+
+    <string-array name="Course">
+        <item>Course</item>
+        <item>BSIT</item>
+        <item>BSED</item>
+        <item>BSEE</item>
+        <item>BSBA</item>
+        <item>BSN</item>
+    </string-array>
+
+    <string-array name="Position">
+        <item>Select Position</item>
+        <item>President C1</item>
+        <item>President C2</item>
+        <item>Vice President C1</item>
+        <item>Vice President C2</item>
+    </string-array>
+
+</resources>

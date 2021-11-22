@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ryanfermo.voterregistrationapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="SeleC"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.VoterRegistrationApp">
+        <activity android:name=".GoogSignIn"></activity>
+        <activity
+            android:name=".results"
+            android:noHistory="true" />
+        <activity
+            android:name=".content"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".admin"
+            android:noHistory="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".done"
+            android:noHistory="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".congrats"
+            android:noHistory="true" />
+        <activity
+            android:name=".forgotpassword"
+            android:noHistory="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".registered"
+            android:noHistory="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".voter"
+            android:noHistory="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".splash"
+            android:noHistory="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:noHistory="true"></activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>
