@@ -19,6 +19,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -34,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Toast backToast;
     private FirebaseAuth mAuth;
     private ProgressBar progressBar;
+    GoogleSignInClient mGoogleSignInClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +50,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Login=(ImageButton)findViewById(R.id.Login);
         Login.setOnClickListener(this);
 
-        Google=(ImageButton)findViewById(R.id.usergoogle);
-
         editTextEmail=(EditText)findViewById(R.id.editTextEmail);
         editTextpPassword=(EditText)findViewById(R.id.editTextTextPassword);
 
@@ -56,15 +58,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         progressBar=(ProgressBar)findViewById(R.id.progressBar);
         mAuth=FirebaseAuth.getInstance();
-
-
-        Google.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,GoogSignIn.class);
-                startActivity(intent);
-            }
-        });
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+        mGoogleSignInClient= GoogleSignIn.getClient(this, gso);
     }
 
     @Override
@@ -93,10 +91,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this,forgotpassword.class));
                 break;
         }
-    }
-
-    private void userGoogle() {
-
     }
 
 
@@ -163,9 +157,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(this, "Admin Section", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this,admin.class));
                 return true;
+            case R.id.signout:
+                Signout();
+                return true;
             default:
                 return false;
         }
+    }
+
+    private void Signout() {
+        mGoogleSignInClient.signOut().addOnCompleteListener(this,new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Toast.makeText(MainActivity.this, "Signed out Successfully", Toast.LENGTH_LONG).show();
+                Intent intent=new Intent(MainActivity.this,Welcome.class );
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

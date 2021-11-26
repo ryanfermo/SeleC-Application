@@ -24,7 +24,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 import static android.content.ContentValues.TAG;
 
-public class GoogSignIn extends MainActivity{
+public class GoogSignIn extends Welcome{
 
     private static final int RC_SIGN_IN = 0;
     GoogleSignInClient mGoogleSignInClient;
@@ -63,7 +63,6 @@ public class GoogSignIn extends MainActivity{
             } catch (ApiException e) {
                 Toast.makeText(GoogSignIn.this,""+e.getMessage(), Toast.LENGTH_LONG).show();
                 progressDialog.dismiss();
-                finish();
             }
         }
     }
@@ -87,7 +86,7 @@ public class GoogSignIn extends MainActivity{
     }
 
     private void updateUI(FirebaseUser user) {
-        Intent intent=new Intent(GoogSignIn.this,voter.class );
+        Intent intent=new Intent(GoogSignIn.this,MainActivity.class );
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }

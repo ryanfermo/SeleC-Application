@@ -19,7 +19,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
@@ -27,16 +26,16 @@ import java.util.Map;
 
 import static android.content.ContentValues.TAG;
 
-public class results extends AppCompatActivity implements View.OnClickListener,PopupMenu.OnMenuItemClickListener{
+public class results1 extends AppCompatActivity implements View.OnClickListener, PopupMenu.OnMenuItemClickListener{
     ImageButton back, candidate1, candidate2, candidate3, candidate4,next;
     TextView C1, C2, C3, C4, P1, P2, P3, P4;
-    TextView PA, PB, VPA, VPB;
+    TextView SA, SB, TA, TB;
     DatabaseReference votes,votes2,votes3,votes4;
     DatabaseReference candidate,candidate12,candidate13,candidate14;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_results);
+        setContentView(R.layout.activity_results1);
         C1 = (TextView) findViewById(R.id.textView10);
         C2 = (TextView) findViewById(R.id.textView12);
         C3 = (TextView) findViewById(R.id.textView13);
@@ -46,10 +45,10 @@ public class results extends AppCompatActivity implements View.OnClickListener,P
         P3 = (TextView) findViewById(R.id.textView5);
         P4 = (TextView) findViewById(R.id.textView6);
 
-        PA=(TextView)findViewById(R.id.PA);
-        PB=(TextView)findViewById(R.id.PB);
-        VPA=(TextView)findViewById(R.id.VPA);
-        VPB=(TextView)findViewById(R.id.VPB);
+        SA=(TextView)findViewById(R.id.SA);
+        SB=(TextView)findViewById(R.id.SB);
+        TA=(TextView)findViewById(R.id.TA);
+        TB=(TextView)findViewById(R.id.TB);
 
         candidate1 = (ImageButton) findViewById(R.id.candidate1);
         candidate2 = (ImageButton) findViewById(R.id.candidate2);
@@ -59,7 +58,7 @@ public class results extends AppCompatActivity implements View.OnClickListener,P
         back.setOnClickListener(this);
         next = (ImageButton) findViewById(R.id.next);
         next.setOnClickListener(this);
-        candidate= FirebaseDatabase.getInstance().getReference().child("Candidate").child("Candidate1");
+        candidate= FirebaseDatabase.getInstance().getReference().child("Candidate").child("Candidate5");
         candidate.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -83,7 +82,7 @@ public class results extends AppCompatActivity implements View.OnClickListener,P
             }
         });
 
-        candidate12=FirebaseDatabase.getInstance().getReference().child("Candidate").child("Candidate2");
+        candidate12=FirebaseDatabase.getInstance().getReference().child("Candidate").child("Candidate6");
         candidate12.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -107,7 +106,7 @@ public class results extends AppCompatActivity implements View.OnClickListener,P
             }
         });
 
-        candidate13=FirebaseDatabase.getInstance().getReference().child("Candidate").child("Candidate3");
+        candidate13=FirebaseDatabase.getInstance().getReference().child("Candidate").child("Candidate7");
         candidate13.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -131,7 +130,7 @@ public class results extends AppCompatActivity implements View.OnClickListener,P
             }
         });
 
-        candidate14=FirebaseDatabase.getInstance().getReference().child("Candidate").child("Candidate4");
+        candidate14=FirebaseDatabase.getInstance().getReference().child("Candidate").child("Candidate8");
         candidate14.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -161,12 +160,12 @@ public class results extends AppCompatActivity implements View.OnClickListener,P
             public void onDataChange(DataSnapshot dataSnapshot) {
                 int count = 0;
                 for(DataSnapshot ds : dataSnapshot.getChildren()) {
-                    Map<String, Object>map=(Map<String, Object>)ds.getValue();
-                    Object pb=map.get("pb");
+                    Map<String, Object> map=(Map<String, Object>)ds.getValue();
+                    Object pb=map.get("sb");
                     int pValue=Integer.parseInt(String.valueOf(pb));
                     count+=pValue;
                     Log.d("Sum",String.valueOf(count));
-                    PB.setText(String.valueOf(count));
+                    SB.setText(String.valueOf(count));
                 }
             }
 
@@ -183,11 +182,11 @@ public class results extends AppCompatActivity implements View.OnClickListener,P
                 int count2 = 0;
                 for(DataSnapshot ds : dataSnapshot.getChildren()) {
                     Map<String, Object>map=(Map<String, Object>)ds.getValue();
-                    Object pa=map.get("pa");
+                    Object pa=map.get("sa");
                     int pValue=Integer.parseInt(String.valueOf(pa));
                     count2+=pValue;
                     Log.d("Sum",String.valueOf(count2));
-                    PA.setText(String.valueOf(count2));
+                    SA.setText(String.valueOf(count2));
                 }
             }
 
@@ -203,11 +202,11 @@ public class results extends AppCompatActivity implements View.OnClickListener,P
                 int count3 = 0;
                 for(DataSnapshot ds : dataSnapshot.getChildren()) {
                     Map<String, Object>map=(Map<String, Object>)ds.getValue();
-                    Object vpb=map.get("vpb");
+                    Object vpb=map.get("tb");
                     int pValue=Integer.parseInt(String.valueOf(vpb));
                     count3+=pValue;
                     Log.d("Sum",String.valueOf(count3));
-                    VPB.setText(String.valueOf(count3));
+                    TB.setText(String.valueOf(count3));
                 }
             }
 
@@ -223,11 +222,11 @@ public class results extends AppCompatActivity implements View.OnClickListener,P
                 int count4 = 0;
                 for(DataSnapshot ds : dataSnapshot.getChildren()) {
                     Map<String, Object>map=(Map<String, Object>)ds.getValue();
-                    Object vpa=map.get("vpa");
+                    Object vpa=map.get("ta");
                     int pValue=Integer.parseInt(String.valueOf(vpa));
                     count4+=pValue;
                     Log.d("Sum",String.valueOf(count4));
-                    VPA.setText(String.valueOf(count4));
+                    TA.setText(String.valueOf(count4));
                 }
             }
 
@@ -240,7 +239,7 @@ public class results extends AppCompatActivity implements View.OnClickListener,P
     }
 
     public void onBackPressed() {
-        Intent new_intent = new Intent(this, admin.class);
+        Intent new_intent = new Intent(this, results.class);
         this.startActivity(new_intent);
         finish();
     }
@@ -248,12 +247,12 @@ public class results extends AppCompatActivity implements View.OnClickListener,P
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.back:
-                Intent new_intent = new Intent(this, admin.class);
+                Intent new_intent = new Intent(this, results.class);
                 this.startActivity(new_intent);
                 finish();
                 break;
             case R.id.next:
-                Intent new_intents = new Intent(this, results1.class);
+                Intent new_intents = new Intent(this, results2.class);
                 this.startActivity(new_intents);
                 finish();
                 break;

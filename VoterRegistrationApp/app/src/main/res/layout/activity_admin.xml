@@ -6,24 +6,25 @@
     android:layout_height="match_parent"
     android:background="#CCFFCC"
     tools:context=".admin">
+
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="270dp"
         android:layout_height="49dp"
+        android:drawableStart="@drawable/ic_username"
+        android:drawableLeft="@drawable/ic_username"
+        android:drawablePadding="12dp"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
-        android:drawableStart="@drawable/ic_username"
-        android:drawablePadding="12dp"
         android:textColor="#000000"
         android:textColorHint="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.551"
-        android:drawableLeft="@drawable/ic_username" />
+        app:layout_constraintVertical_bias="0.551" />
 
     <EditText
         android:id="@+id/editTextTextPassword"

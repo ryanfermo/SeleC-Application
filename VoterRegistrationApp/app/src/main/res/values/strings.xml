@@ -17,6 +17,16 @@
         <item>President C2</item>
         <item>Vice President C1</item>
         <item>Vice President C2</item>
+        <item>Secretary C1</item>
+        <item>Secretary C2</item>
+        <item>Treasurer C1</item>
+        <item>Treasurer C2</item>
+        <item>Auditor C1</item>
+        <item>Auditor C2</item>
+        <item>PRO C1</item>
+        <item>PRO C2</item>
+        <item>Representative C1</item>
+        <item>Representative C2</item>
     </string-array>
 
 </resources>

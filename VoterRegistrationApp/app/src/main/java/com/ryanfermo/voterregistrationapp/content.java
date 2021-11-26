@@ -133,6 +133,16 @@ public class content extends AppCompatActivity implements View.OnClickListener, 
         if(choice.equals("President C2")){po="C2";}
         if(choice.equals("Vice President C1")){po="C3";}
         if(choice.equals("Vice President C2")){po="C4";}
+        if(choice.equals("Secretary C1")){po="C5";}
+        if(choice.equals("Secretary C2")){po="C6";}
+        if(choice.equals("Treasurer C1")){po="C7";}
+        if(choice.equals("Treasurer C2")){po="C8";}
+        if(choice.equals("Auditor C1")){po="C9";}
+        if(choice.equals("Auditor C2")){po="C10";}
+        if(choice.equals("PRO C1")){po="C11";}
+        if(choice.equals("PRO C2")){po="C12";}
+        if(choice.equals("Representative C1")){po="C13";}
+        if(choice.equals("Representative C2")){po="C14";}
     }
 
     @Override
@@ -198,6 +208,126 @@ public class content extends AppCompatActivity implements View.OnClickListener, 
             }
             if (po == "C4") {
                 candidate.child("Candidate4").updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
+                    @Override
+                    public void onSuccess(Object o) {
+                        Toast.makeText(content.this, "Data has been Updated", Toast.LENGTH_LONG).show();
+                        Name.setText("");
+                        Party.setText("");
+                        sample.setText("");
+                        ImageView.setImageResource(R.drawable.avatars);
+                    }
+                });
+            }
+            if (po == "C5") {
+                candidate.child("Candidate5").updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
+                    @Override
+                    public void onSuccess(Object o) {
+                        Toast.makeText(content.this, "Data has been Updated", Toast.LENGTH_LONG).show();
+                        Name.setText("");
+                        Party.setText("");
+                        sample.setText("");
+                        ImageView.setImageResource(R.drawable.avatars);
+                    }
+                });
+            }
+            if (po == "C6") {
+                candidate.child("Candidate6").updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
+                    @Override
+                    public void onSuccess(Object o) {
+                        Toast.makeText(content.this, "Data has been Updated", Toast.LENGTH_LONG).show();
+                        Name.setText("");
+                        Party.setText("");
+                        sample.setText("");
+                        ImageView.setImageResource(R.drawable.avatars);
+                    }
+                });
+            }
+            if (po == "C7") {
+                candidate.child("Candidate7").updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
+                    @Override
+                    public void onSuccess(Object o) {
+                        Toast.makeText(content.this, "Data has been Updated", Toast.LENGTH_LONG).show();
+                        Name.setText("");
+                        Party.setText("");
+                        sample.setText("");
+                        ImageView.setImageResource(R.drawable.avatars);
+                    }
+                });
+            }
+            if (po == "C8") {
+                candidate.child("Candidate8").updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
+                    @Override
+                    public void onSuccess(Object o) {
+                        Toast.makeText(content.this, "Data has been Updated", Toast.LENGTH_LONG).show();
+                        Name.setText("");
+                        Party.setText("");
+                        sample.setText("");
+                        ImageView.setImageResource(R.drawable.avatars);
+                    }
+                });
+            }
+            if (po == "C9") {
+                candidate.child("Candidate9").updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
+                    @Override
+                    public void onSuccess(Object o) {
+                        Toast.makeText(content.this, "Data has been Updated", Toast.LENGTH_LONG).show();
+                        Name.setText("");
+                        Party.setText("");
+                        sample.setText("");
+                        ImageView.setImageResource(R.drawable.avatars);
+                    }
+                });
+            }
+            if (po == "C10") {
+                candidate.child("Candidate10").updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
+                    @Override
+                    public void onSuccess(Object o) {
+                        Toast.makeText(content.this, "Data has been Updated", Toast.LENGTH_LONG).show();
+                        Name.setText("");
+                        Party.setText("");
+                        sample.setText("");
+                        ImageView.setImageResource(R.drawable.avatars);
+                    }
+                });
+            }
+            if (po == "C11") {
+                candidate.child("Candidate11").updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
+                    @Override
+                    public void onSuccess(Object o) {
+                        Toast.makeText(content.this, "Data has been Updated", Toast.LENGTH_LONG).show();
+                        Name.setText("");
+                        Party.setText("");
+                        sample.setText("");
+                        ImageView.setImageResource(R.drawable.avatars);
+                    }
+                });
+            }
+            if (po == "C12") {
+                candidate.child("Candidate12").updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
+                    @Override
+                    public void onSuccess(Object o) {
+                        Toast.makeText(content.this, "Data has been Updated", Toast.LENGTH_LONG).show();
+                        Name.setText("");
+                        Party.setText("");
+                        sample.setText("");
+                        ImageView.setImageResource(R.drawable.avatars);
+                    }
+                });
+            }
+            if (po == "C13") {
+                candidate.child("Candidate13").updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
+                    @Override
+                    public void onSuccess(Object o) {
+                        Toast.makeText(content.this, "Data has been Updated", Toast.LENGTH_LONG).show();
+                        Name.setText("");
+                        Party.setText("");
+                        sample.setText("");
+                        ImageView.setImageResource(R.drawable.avatars);
+                    }
+                });
+            }
+            if (po == "C14") {
+                candidate.child("Candidate14").updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
                     @Override
                     public void onSuccess(Object o) {
                         Toast.makeText(content.this, "Data has been Updated", Toast.LENGTH_LONG).show();

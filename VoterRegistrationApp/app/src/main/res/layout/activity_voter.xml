@@ -90,17 +90,494 @@
             app:layout_constraintTop_toBottomOf="@+id/textView9"
             app:srcCompat="@drawable/avatars" />
 
+        <TextView
+            android:id="@+id/forsecretary"
+            android:layout_width="365dp"
+            android:layout_height="41dp"
+            android:background="#9003A9F4"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="For Secretary"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+        <ImageButton
+            android:id="@+id/candidate5"
+            android:layout_width="86dp"
+            android:layout_height="86dp"
+            android:layout_marginTop="20dp"
+            android:background="#00FFFFFF"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.236"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forsecretary"
+            app:srcCompat="@drawable/avatars" />
+
+        <TextView
+            android:id="@+id/namesecretary"
+            android:layout_width="138dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Argielen Rudio"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.172"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/candidate5" />
+
+        <TextView
+            android:id="@+id/partysecretary"
+            android:layout_width="138dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="0dp"
+            android:gravity="center"
+            android:text="BOBO Partylist"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.172"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/namesecretary" />
+
+
+
+        <ImageButton
+            android:id="@+id/candidate6"
+            android:layout_width="86dp"
+            android:layout_height="86dp"
+            android:layout_marginTop="20dp"
+            android:background="#00FFFFFF"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.763"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forsecretary"
+            app:srcCompat="@drawable/avatars" />
+
+
+        <TextView
+            android:id="@+id/namesecretary1"
+            android:layout_width="138dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Valentine Bergado"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.813"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/candidate6" />
+
+        <TextView
+            android:id="@+id/partysecretary1"
+            android:layout_width="138dp"
+            android:layout_height="23dp"
+            android:gravity="center"
+            android:text="NOOB Partylist"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.809"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/namesecretary1" />
+
+        <TextView
+            android:id="@+id/fortreasurer"
+            android:layout_width="365dp"
+            android:layout_height="41dp"
+            android:background="#9003A9F4"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="For Treasurer"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/partysecretary" />
+
+        <ImageButton
+            android:id="@+id/candidate7"
+            android:layout_width="86dp"
+            android:layout_height="86dp"
+            android:layout_marginTop="20dp"
+            android:background="#00FFFFFF"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.236"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fortreasurer"
+            app:srcCompat="@drawable/avatars" />
+
+        <TextView
+            android:id="@+id/nametreasurer"
+            android:layout_width="138dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Jenny Silos"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.172"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/candidate7" />
+
+        <TextView
+            android:id="@+id/partytreasurer"
+            android:layout_width="138dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="0dp"
+            android:gravity="center"
+            android:text="BOBO Partylist"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.172"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nametreasurer" />
+
+
+
+        <ImageButton
+            android:id="@+id/candidate8"
+            android:layout_width="86dp"
+            android:layout_height="86dp"
+            android:layout_marginTop="20dp"
+            android:background="#00FFFFFF"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.763"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fortreasurer"
+            app:srcCompat="@drawable/avatars" />
+
+        <TextView
+            android:id="@+id/nametreasurer1"
+            android:layout_width="138dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="John Ladines"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.816"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/candidate8" />
+
+        <TextView
+            android:id="@+id/partytreasurer1"
+            android:layout_width="138dp"
+            android:layout_height="23dp"
+            android:gravity="center"
+            android:text="NOOB Partylist"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.813"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nametreasurer1" />
+
+        <TextView
+            android:id="@+id/forauditor"
+            android:layout_width="365dp"
+            android:layout_height="41dp"
+            android:background="#9003A9F4"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="For Auditor"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/partytreasurer" />
+
+        <ImageButton
+            android:id="@+id/candidate9"
+            android:layout_width="86dp"
+            android:layout_height="86dp"
+            android:layout_marginTop="20dp"
+            android:background="#00FFFFFF"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.236"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forauditor"
+            app:srcCompat="@drawable/avatars" />
+
+        <TextView
+            android:id="@+id/nameauditor"
+            android:layout_width="138dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="James Getubig"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.172"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/candidate9" />
+
+        <TextView
+            android:id="@+id/partyauditor"
+            android:layout_width="138dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="0dp"
+            android:gravity="center"
+            android:text="BOBO Partylist"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.172"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameauditor" />
+
+
+
+        <ImageButton
+            android:id="@+id/candidate10"
+            android:layout_width="86dp"
+            android:layout_height="86dp"
+            android:layout_marginTop="20dp"
+            android:background="#00FFFFFF"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.763"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forauditor"
+            app:srcCompat="@drawable/avatars" />
+
+        <TextView
+            android:id="@+id/nameauditor1"
+            android:layout_width="138dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Joseph Getubig"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.798"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/candidate10" />
+
+
+        <TextView
+            android:id="@+id/partyauditor1"
+            android:layout_width="138dp"
+            android:layout_height="23dp"
+            android:gravity="center"
+            android:text="NOOB Partylist"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.787"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameauditor1" />
+
+        <TextView
+            android:id="@+id/forpro"
+            android:layout_width="365dp"
+            android:layout_height="41dp"
+            android:background="#9003A9F4"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="For PRO"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/partyauditor" />
+
+        <ImageButton
+            android:id="@+id/candidate11"
+            android:layout_width="86dp"
+            android:layout_height="86dp"
+            android:layout_marginTop="20dp"
+            android:background="#00FFFFFF"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.236"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forpro"
+            app:srcCompat="@drawable/avatars" />
+
+        <TextView
+            android:id="@+id/namepro"
+            android:layout_width="138dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="JB Montano"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.172"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/candidate11" />
+
+        <TextView
+            android:id="@+id/partypro"
+            android:layout_width="138dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="0dp"
+            android:gravity="center"
+            android:text="BOBO Partylist"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.172"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/namepro" />
+
+        <ImageButton
+            android:id="@+id/candidate12"
+            android:layout_width="86dp"
+            android:layout_height="86dp"
+            android:layout_marginTop="20dp"
+            android:background="#00FFFFFF"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.763"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forpro"
+            app:srcCompat="@drawable/avatars" />
+
+        <TextView
+            android:id="@+id/namepro1"
+            android:layout_width="138dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Jefferson Prangan"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.787"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/candidate12" />
+
+        <TextView
+            android:id="@+id/partypro1"
+            android:layout_width="138dp"
+            android:layout_height="23dp"
+            android:gravity="center"
+            android:text="NOOB Partylist"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.798"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/namepro1" />
+
+        <TextView
+            android:id="@+id/forrep"
+            android:layout_width="365dp"
+            android:layout_height="41dp"
+            android:background="#9003A9F4"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="For Representative"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/partypro" />
+
+        <ImageButton
+            android:id="@+id/candidate13"
+            android:layout_width="86dp"
+            android:layout_height="86dp"
+            android:layout_marginTop="20dp"
+            android:background="#00FFFFFF"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.236"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forrep"
+            app:srcCompat="@drawable/avatars" />
+
+        <TextView
+            android:id="@+id/namerep"
+            android:layout_width="138dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Darwin Taja"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.172"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/candidate13" />
+
+        <TextView
+            android:id="@+id/partyrep"
+            android:layout_width="138dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="0dp"
+            android:gravity="center"
+            android:text="BOBO Partylist"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.172"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/namerep" />
+
+
+        <ImageButton
+            android:id="@+id/candidate14"
+            android:layout_width="86dp"
+            android:layout_height="86dp"
+            android:layout_marginTop="20dp"
+            android:background="#00FFFFFF"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.763"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forrep"
+            app:srcCompat="@drawable/avatars" />
+
+
+        <TextView
+            android:id="@+id/namerep1"
+            android:layout_width="138dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Mikka Mendoza"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.813"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/candidate14" />
+
+        <TextView
+            android:id="@+id/partyrep1"
+            android:layout_width="138dp"
+            android:layout_height="23dp"
+            android:gravity="center"
+            android:text="NOOB Partylist"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.809"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/namerep1" />
+
         <ImageButton
             android:id="@+id/submit"
             android:layout_width="115dp"
             android:layout_height="49dp"
             android:layout_marginTop="28dp"
+            android:layout_marginBottom="50dp"
             android:background="#00FFFFFF"
             android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.837"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            app:layout_constraintTop_toBottomOf="@+id/partyrep1"
             app:srcCompat="@drawable/submit" />
 
         <ImageButton
@@ -108,12 +585,14 @@
             android:layout_width="115dp"
             android:layout_height="49dp"
             android:layout_marginTop="28dp"
+            android:layout_marginBottom="50dp"
             android:background="#00FFFFFF"
             android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.168"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            app:layout_constraintTop_toBottomOf="@+id/partyrep"
             app:srcCompat="@drawable/logout" />
 
         <TextView
@@ -148,13 +627,13 @@
             android:id="@+id/textView10"
             android:layout_width="138dp"
             android:layout_height="23dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="8dp"
             android:gravity="center"
             android:text="Ryan Fermo"
             android:textColor="#000000"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.161"
+            app:layout_constraintHorizontal_bias="0.183"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/candidate1" />
 

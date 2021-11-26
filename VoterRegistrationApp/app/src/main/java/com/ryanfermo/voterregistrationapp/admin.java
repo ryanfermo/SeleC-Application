@@ -1,5 +1,6 @@
 package com.ryanfermo.voterregistrationapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -15,12 +16,19 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+
 public class admin extends AppCompatActivity implements View.OnClickListener,PopupMenu.OnMenuItemClickListener {
     private EditText editTextEmail, editTextpPassword;
     private ImageButton login;
     private TextView nouser;
     private long backPressedTime;
     private Toast backToast;
+    GoogleSignInClient mGoogleSignInClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +41,11 @@ public class admin extends AppCompatActivity implements View.OnClickListener,Pop
 
         login=(ImageButton)findViewById(R.id.Login);
         login.setOnClickListener(this);
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+        mGoogleSignInClient= GoogleSignIn.getClient(this, gso);
     }
     @Override
     public void onBackPressed() {
@@ -75,9 +88,23 @@ public class admin extends AppCompatActivity implements View.OnClickListener,Pop
                 Toast.makeText(this, "Admin Section", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this,admin.class));
                 return true;
+            case R.id.signout:
+                Signout();
+                return true;
             default:
                 return false;
         }
+    }
+
+    private void Signout() {
+        mGoogleSignInClient.signOut().addOnCompleteListener(this,new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Toast.makeText(admin.this, "Signed out Successfully", Toast.LENGTH_LONG).show();
+                Intent intent=new Intent(admin.this,Welcome.class );
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
