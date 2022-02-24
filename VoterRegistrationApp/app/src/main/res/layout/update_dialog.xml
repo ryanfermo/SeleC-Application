@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/ImageView"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/iconselec"/>
+
+    <TextView
+        android:id="@+id/note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ImageView"
+        android:fontFamily="@font/adamina"
+        android:layout_marginTop="50dp"
+        android:text="Are you sure you want to \nPermanently delete?"
+        android:textColor="#000000"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="DELETE"
+        android:background="@drawable/custom_input"
+        android:textColor="@color/white"
+        android:fontFamily="@font/adamina"
+        android:layout_below="@+id/note"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="55dp"
+        android:layout_marginBottom="40dp"/>
+</RelativeLayout>
+</LinearLayout>

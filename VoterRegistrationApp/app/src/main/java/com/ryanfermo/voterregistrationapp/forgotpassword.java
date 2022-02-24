@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class forgotpassword extends AppCompatActivity implements View.OnClickListener {
     private EditText editemail;
-    private ImageButton resetbutton;
+    private Button resetbutton;
     private ProgressBar progressBar;
     ImageView banner;
     FirebaseAuth auth;
@@ -31,7 +31,7 @@ public class forgotpassword extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_forgotpassword);
 
         editemail=(EditText)findViewById(R.id.editemail);
-        resetbutton=(ImageButton)findViewById(R.id.resetpassword);
+        resetbutton=(Button)findViewById(R.id.resetpassword);
         progressBar=(ProgressBar)findViewById(R.id.progressBar);
 
         banner=(ImageView) findViewById((R.id.banner));
@@ -47,10 +47,9 @@ public class forgotpassword extends AppCompatActivity implements View.OnClickLis
     }
     @Override
     public void onBackPressed() {
-
         Intent new_intent = new Intent(this, MainActivity.class);
-
         this.startActivity(new_intent);
+        finish();
 
     }
     private void resetpassword() {
@@ -71,12 +70,13 @@ public class forgotpassword extends AppCompatActivity implements View.OnClickLis
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()) {
                     progressBar.setVisibility(View.GONE);
-                    Toast.makeText(forgotpassword.this,"Check your email to reset your password", Toast.LENGTH_LONG).show();
+                    Toast.makeText(forgotpassword.this,"Check your email to reset your password", Toast.LENGTH_SHORT).show();
                     Intent main = new Intent(forgotpassword.this, MainActivity.class);
                     startActivity(main);
+                    finish();
                 }else{
                     progressBar.setVisibility(View.GONE);
-                    Toast.makeText(forgotpassword.this,"Try again!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(forgotpassword.this,"Try again!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -86,5 +86,6 @@ public class forgotpassword extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         Intent intent=new Intent(this,MainActivity.class);
         startActivity(intent);
+        finish();
     }
 }

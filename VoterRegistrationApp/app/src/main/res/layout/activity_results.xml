@@ -1,337 +1,960 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CCFFCC"
-    tools:context=".results">
+    android:background="@color/white"
+    android:id="@+id/drawer_layout"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/nav_view"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/newmenu"
+        android:layout_gravity="start">
+    </com.google.android.material.navigation.NavigationView>
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="138dp"
-        android:layout_height="23dp"
-        android:gravity="center"
-        android:text="NOOB Partylist"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.813" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/textView7"
-        android:layout_width="262dp"
-        android:layout_height="81dp"
-        android:background="#00600505"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.072"
-        app:srcCompat="@drawable/ress" />
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            app:titleTextColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#FF6F00"
+            android:elevation="4dp">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Vote Result"
+                android:fontFamily="@font/adamina"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </androidx.appcompat.widget.Toolbar>
 
-    <ImageButton
-        android:id="@+id/candidate1"
-        android:layout_width="86dp"
-        android:layout_height="86dp"
-        android:background="#00FFFFFF"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.299"
-        app:srcCompat="@drawable/avatars" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <ImageButton
-        android:id="@+id/candidate2"
-        android:layout_width="86dp"
-        android:layout_height="86dp"
-        android:background="#00FFFFFF"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.452"
-        app:srcCompat="@drawable/avatars" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="5dp"
+                tools:context=".result">
 
-    <ImageButton
-        android:id="@+id/candidate3"
-        android:layout_width="86dp"
-        android:layout_height="86dp"
-        android:background="#00FFFFFF"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.693"
-        app:srcCompat="@drawable/avatars" />
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:gravity="center"
+                    android:text="Default Partylist"
+                    android:textColor="#000000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.787"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
-    <ImageButton
-        android:id="@+id/candidate4"
-        android:layout_width="86dp"
-        android:layout_height="86dp"
-        android:background="#00FFFFFF"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.844"
-        app:srcCompat="@drawable/avatars" />
-
-    <ImageButton
-        android:id="@+id/back"
-        android:layout_width="115dp"
-        android:layout_height="49dp"
-        android:background="#00FFFFFF"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.189"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.958"
-        app:srcCompat="@drawable/back" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="300dp"
-        android:layout_height="41dp"
-        android:background="#9003A9F4"
-        android:gravity="center"
-        android:text="President "
-        android:textColor="#000000"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.477"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.204" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="300dp"
-        android:layout_height="41dp"
-        android:background="#8F03A9F4"
-        android:gravity="center"
-        android:text="Vice President"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.569" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="138dp"
-        android:layout_height="23dp"
-        android:gravity="center"
-        android:text="Ryan Fermo"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.292" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="138dp"
-        android:layout_height="23dp"
-        android:gravity="center"
-        android:text="Missy Nunez"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.426" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="138dp"
-        android:layout_height="23dp"
-        android:gravity="center"
-        android:text="Clarisse Orbizo"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.646" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="138dp"
-        android:layout_height="23dp"
-        android:gravity="center"
-        android:text="Reynalyn Fabro"
-        android:textColor="#050505"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.781" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="138dp"
-        android:layout_height="23dp"
-        android:gravity="center"
-        android:text="BOBO Partylist"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.324" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="138dp"
-        android:layout_height="23dp"
-        android:gravity="center"
-        android:text="BOBO Partylist"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.679" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="138dp"
-        android:layout_height="23dp"
-        android:gravity="center"
-        android:text="NOOB Partylist"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.459" />
-
-    <TextView
-        android:id="@+id/PA"
-        android:layout_width="55dp"
-        android:layout_height="47dp"
-        android:background="#C6FFC107"
-        android:gravity="center"
-        android:text="Votes"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.837"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.302" />
-
-    <TextView
-        android:id="@+id/PB"
-        android:layout_width="55dp"
-        android:layout_height="47dp"
-        android:background="#C6FFC107"
-        android:gravity="center"
-        android:text="Votes"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.837"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.441" />
-
-    <TextView
-        android:id="@+id/VPA"
-        android:layout_width="55dp"
-        android:layout_height="47dp"
-        android:background="#C6FFC107"
-        android:gravity="center"
-        android:text="Votes"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.837"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.669" />
-
-    <TextView
-        android:id="@+id/VPB"
-        android:layout_width="55dp"
-        android:layout_height="47dp"
-        android:background="#C6FFC107"
-        android:gravity="center"
-        android:text="Votes"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.837"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.809" />
-
-    <ImageButton
-        android:id="@+id/next"
-        android:layout_width="115dp"
-        android:layout_height="49dp"
-        android:background="#00FFFFFF"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.804"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.958"
-        app:srcCompat="@drawable/next" />
-    <ImageButton
-        android:id="@+id/button1"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="#00FFFFFF"
-        android:onClick="showPopup"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.008"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.005"
-        app:srcCompat="@drawable/ic_baseline_menu_24"
-        tools:ignore="UsingOnClickInXml,VectorDrawableCompat" />
+                <TextView
+                    android:id="@+id/VPB"
+                    android:layout_width="55dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="88dp"
+                    android:layout_marginLeft="88dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#C6FFC107"
+                    android:gravity="center"
+                    android:text="Votes"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.667"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageButton
+                    android:id="@+id/candidate1"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#00FFFFFF"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.23"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView8"
+                    app:srcCompat="@drawable/avatars" />
+
+                <ImageButton
+                    android:id="@+id/candidate2"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#00FFFFFF"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.772"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView8"
+                    app:srcCompat="@drawable/avatars" />
+
+                <ImageButton
+                    android:id="@+id/candidate3"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#00FFFFFF"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.23"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView9"
+                    app:srcCompat="@drawable/avatars" />
+
+                <ImageButton
+                    android:id="@+id/candidate4"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#00FFFFFF"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.772"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView9"
+                    app:srcCompat="@drawable/avatars" />
+
+                <TextView
+                    android:id="@+id/forsecretary"
+                    android:layout_width="365dp"
+                    android:layout_height="41dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/white"
+                    android:fontFamily="@font/adamina"
+                    android:gravity="center"
+                    android:text="Secretary"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.347"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/VPA" />
+
+                <ImageButton
+                    android:id="@+id/candidate5"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#00FFFFFF"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.23"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/forsecretary"
+                    app:srcCompat="@drawable/avatars" />
+
+                <TextView
+                    android:id="@+id/namesecretary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="Default Name"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.225"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/candidate5" />
+
+                <TextView
+                    android:id="@+id/partysecretary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:gravity="center"
+                    android:text="Default Partylist"
+                    android:textColor="#000000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.218"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/namesecretary" />
+                <TextView
+                    android:id="@+id/SA"
+                    android:layout_width="55dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="88dp"
+                    android:layout_marginLeft="88dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#C6FFC107"
+                    android:gravity="center"
+                    android:text="Votes"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.003"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/partysecretary" />
+
+                <ImageButton
+                    android:id="@+id/candidate6"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#00FFFFFF"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.772"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/forsecretary"
+                    app:srcCompat="@drawable/avatars" />
+
+
+                <TextView
+                    android:id="@+id/namesecretary1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="Default Name"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.777"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/candidate6" />
+
+                <TextView
+                    android:id="@+id/partysecretary1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:gravity="center"
+                    android:text="Default Partylist"
+                    android:textColor="#000000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.787"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/namesecretary1" />
+                <TextView
+                    android:id="@+id/SB"
+                    android:layout_width="55dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="88dp"
+                    android:layout_marginLeft="88dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#C6FFC107"
+                    android:gravity="center"
+                    android:text="Votes"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.675"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/partysecretary1" />
+
+                <TextView
+                    android:id="@+id/fortreasurer"
+                    android:layout_width="365dp"
+                    android:layout_height="41dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/white"
+                    android:fontFamily="@font/adamina"
+                    android:gravity="center"
+                    android:text="Treasurer"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/SA" />
+
+                <ImageButton
+                    android:id="@+id/candidate7"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#00FFFFFF"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.23"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fortreasurer"
+                    app:srcCompat="@drawable/avatars" />
+
+                <TextView
+                    android:id="@+id/nametreasurer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="Default Name"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.225"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/candidate7" />
+
+                <TextView
+                    android:id="@+id/partytreasurer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:gravity="center"
+                    android:text="Default Partylist"
+                    android:textColor="#000000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.218"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/nametreasurer" />
+                <TextView
+                    android:id="@+id/TA"
+                    android:layout_width="55dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="88dp"
+                    android:layout_marginLeft="88dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#C6FFC107"
+                    android:gravity="center"
+                    android:text="Votes"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.003"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/partytreasurer" />
+
+
+                <ImageButton
+                    android:id="@+id/candidate8"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#00FFFFFF"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.772"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fortreasurer"
+                    app:srcCompat="@drawable/avatars" />
+
+                <TextView
+                    android:id="@+id/nametreasurer1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="Default Name"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.777"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/candidate8" />
+
+                <TextView
+                    android:id="@+id/partytreasurer1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:gravity="center"
+                    android:text="Default Partylist"
+                    android:textColor="#000000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.787"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/nametreasurer1" />
+                <TextView
+                    android:id="@+id/TB"
+                    android:layout_width="55dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="88dp"
+                    android:layout_marginLeft="88dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#C6FFC107"
+                    android:gravity="center"
+                    android:text="Votes"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.675"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/partytreasurer1" />
+
+                <TextView
+                    android:id="@+id/forauditor"
+                    android:layout_width="365dp"
+                    android:layout_height="41dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/white"
+                    android:fontFamily="@font/adamina"
+                    android:gravity="center"
+                    android:text="Auditor"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/TA" />
+
+                <ImageButton
+                    android:id="@+id/candidate9"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#00FFFFFF"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.23"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/forauditor"
+                    app:srcCompat="@drawable/avatars" />
+
+                <TextView
+                    android:id="@+id/nameauditor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="Default Name"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.225"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/candidate9" />
+
+                <TextView
+                    android:id="@+id/partyauditor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:gravity="center"
+                    android:text="Default Partylist"
+                    android:textColor="#000000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.218"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/nameauditor" />
+                <TextView
+                    android:id="@+id/OA"
+                    android:layout_width="55dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="88dp"
+                    android:layout_marginLeft="88dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#C6FFC107"
+                    android:gravity="center"
+                    android:text="Votes"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.003"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/partyauditor" />
+
+                <ImageButton
+                    android:id="@+id/candidate10"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#00FFFFFF"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.772"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/forauditor"
+                    app:srcCompat="@drawable/avatars" />
+
+                <TextView
+                    android:id="@+id/nameauditor1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="Default Name"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.777"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/candidate10" />
+
+
+                <TextView
+                    android:id="@+id/partyauditor1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:gravity="center"
+                    android:text="Default Partylist"
+                    android:textColor="#000000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.787"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/nameauditor1" />
+                <TextView
+                    android:id="@+id/OB"
+                    android:layout_width="55dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="88dp"
+                    android:layout_marginLeft="88dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#C6FFC107"
+                    android:gravity="center"
+                    android:text="Votes"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.675"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/partyauditor1" />
+
+                <TextView
+                    android:id="@+id/forpro"
+                    android:layout_width="365dp"
+                    android:layout_height="41dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/white"
+                    android:fontFamily="@font/adamina"
+                    android:gravity="center"
+                    android:text="PRO"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/OA" />
+
+                <ImageButton
+                    android:id="@+id/candidate11"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#00FFFFFF"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.23"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/forpro"
+                    app:srcCompat="@drawable/avatars" />
+
+                <TextView
+                    android:id="@+id/namepro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="Default Name"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.225"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/candidate11" />
+
+                <TextView
+                    android:id="@+id/partypro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:gravity="center"
+                    android:text="Default Partylist"
+                    android:textColor="#000000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.218"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/namepro" />
+                <TextView
+                    android:id="@+id/PRA"
+                    android:layout_width="55dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="88dp"
+                    android:layout_marginLeft="88dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#C6FFC107"
+                    android:gravity="center"
+                    android:text="Votes"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.003"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/partypro" />
+
+                <ImageButton
+                    android:id="@+id/candidate12"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#00FFFFFF"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.772"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/forpro"
+                    app:srcCompat="@drawable/avatars" />
+
+                <TextView
+                    android:id="@+id/namepro1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="Default Name"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.777"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/candidate12" />
+
+                <TextView
+                    android:id="@+id/partypro1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:gravity="center"
+                    android:text="Default Partylist"
+                    android:textColor="#000000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.787"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/namepro1" />
+                <TextView
+                    android:id="@+id/PRB"
+                    android:layout_width="55dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="88dp"
+                    android:layout_marginLeft="88dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#C6FFC107"
+                    android:gravity="center"
+                    android:text="Votes"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.675"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/partypro1" />
+
+                <TextView
+                    android:id="@+id/forrep"
+                    android:layout_width="365dp"
+                    android:layout_height="41dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/white"
+                    android:fontFamily="@font/adamina"
+                    android:gravity="center"
+                    android:text="Representative"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/PRA" />
+
+                <ImageButton
+                    android:id="@+id/candidate13"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#00FFFFFF"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.23"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/forrep"
+                    app:srcCompat="@drawable/avatars" />
+
+                <TextView
+                    android:id="@+id/namerep"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="Default Name"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.225"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/candidate13" />
+
+                <TextView
+                    android:id="@+id/partyrep"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:gravity="center"
+                    android:text="Default Partylist"
+                    android:textColor="#000000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.218"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/namerep" />
+                <TextView
+                    android:id="@+id/RA"
+                    android:layout_width="55dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="88dp"
+                    android:layout_marginLeft="88dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#C6FFC107"
+                    android:gravity="center"
+                    android:text="Votes"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.003"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/partyrep" />
+
+
+                <ImageButton
+                    android:id="@+id/candidate14"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#00FFFFFF"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.772"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/forrep"
+                    app:srcCompat="@drawable/avatars" />
+
+
+                <TextView
+                    android:id="@+id/namerep1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="Default Name"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.777"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/candidate14" />
+
+                <TextView
+                    android:id="@+id/partyrep1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:gravity="center"
+                    android:text="Default Partylist"
+                    android:textColor="#000000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.787"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/namerep1" />
+                <TextView
+                    android:id="@+id/RB"
+                    android:layout_width="55dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="88dp"
+                    android:layout_marginLeft="88dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#C6FFC107"
+                    android:gravity="center"
+                    android:text="Votes"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.675"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/partyrep1" />
+
+                <Button
+                    android:id="@+id/complete"
+                    android:layout_width="250dp"
+                    android:layout_height="49dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="50dp"
+                    android:background="@drawable/custom_input"
+                    android:text="End Election"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/adamina"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/RA"
+                    app:layout_constraintVertical_bias="0.0"/>
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="365dp"
+                    android:layout_height="41dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@color/white"
+                    android:fontFamily="@font/adamina"
+                    android:gravity="center"
+                    android:text="President "
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="365dp"
+                    android:layout_height="41dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/white"
+                    android:fontFamily="@font/adamina"
+                    android:gravity="center"
+                    android:text="Vice President"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/PA" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="Default Name"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.225"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/candidate1" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="Default Name"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.777"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/candidate2" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="Default Name"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.225"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/candidate3" />
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="Default Name"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.777"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/candidate4" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:gravity="center"
+                    android:text="Default Partylist"
+                    android:textColor="#000000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.218"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+                <TextView
+                    android:id="@+id/PA"
+                    android:layout_width="55dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="88dp"
+                    android:layout_marginLeft="88dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#C6FFC107"
+                    android:gravity="center"
+                    android:text="Votes"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.003"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:gravity="center"
+                    android:text="Default Partylist"
+                    android:textColor="#000000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.218"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+                <TextView
+                    android:id="@+id/VPA"
+                    android:layout_width="55dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="88dp"
+                    android:layout_marginLeft="88dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#C6FFC107"
+                    android:gravity="center"
+                    android:text="Votes"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.003"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:gravity="center"
+                    android:text="Default Partylist"
+                    android:textColor="#000000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.787"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+                <TextView
+                    android:id="@+id/PB"
+                    android:layout_width="55dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="88dp"
+                    android:layout_marginLeft="88dp"
+                    android:layout_marginTop="12dp"
+                    android:background="#C6FFC107"
+                    android:gravity="center"
+                    android:text="Votes"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.675"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

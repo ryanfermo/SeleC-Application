@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/appvoter"
+            android:icon="@drawable/selecresult"
+            android:title="Advocacy" />
+        <item
+            android:id="@+id/votingsec"
+            android:icon="@drawable/votingsection"
+            android:title="Voting" />
+    </group>
+    <item android:title="Setting">
+        <menu>
+            <item
+                android:id="@+id/signout"
+                android:icon="@drawable/seleclogout"
+                android:title="Logout" />
+        </menu>
+    </item>
+</menu>

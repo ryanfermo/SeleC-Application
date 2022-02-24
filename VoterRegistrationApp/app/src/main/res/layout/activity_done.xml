@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CCFFCC"
+    android:background="@color/white"
     tools:context=".done">
 
     <ImageView
@@ -27,6 +27,7 @@
         android:ems="10"
         android:gravity="center"
         android:inputType="textPersonName"
+        android:fontFamily="@font/adamina"
         android:text="Vote submitted."
         android:textColor="#000000"
         android:textSize="30sp"
@@ -43,6 +44,7 @@
         android:layout_height="114dp"
         android:gravity="center"
         android:text="Thank you for your participation!"
+        android:fontFamily="@font/adamina"
         android:textColor="#000000"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -52,36 +54,20 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageButton
-        android:id="@+id/back"
-        android:layout_width="118dp"
-        android:layout_height="49dp"
-        android:background="#00FFFFFF"
-        android:scaleType="fitXY"
-        android:textAllCaps="false"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.218"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.78"
-        app:srcCompat="@drawable/back" />
 
-    <ImageButton
+    <Button
         android:id="@+id/exit"
         android:layout_width="118dp"
         android:layout_height="49dp"
-        android:background="#00FFFFFF"
-        android:scaleType="fitXY"
-        android:textAllCaps="false"
-        android:textSize="18sp"
+        android:background="@drawable/custom_input"
+        android:fontFamily="@font/adamina"
+        android:text="Exit"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.808"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.78"
-        app:srcCompat="@drawable/exit" />
+        app:layout_constraintVertical_bias="0.747" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

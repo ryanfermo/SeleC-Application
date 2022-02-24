@@ -3,7 +3,7 @@
 
 
     <string-array name="Course">
-        <item>Course</item>
+        <item>Select your Course</item>
         <item>BSIT</item>
         <item>BSED</item>
         <item>BSEE</item>
@@ -28,5 +28,8 @@
         <item>Representative C1</item>
         <item>Representative C2</item>
     </string-array>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 
 </resources>

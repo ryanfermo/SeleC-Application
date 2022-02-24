@@ -12,51 +12,45 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.VoterRegistrationApp">
-        <activity android:name=".results3"
-            android:noHistory="true"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".results2"
-            android:noHistory="true"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".results1"
-            android:noHistory="true"
-            android:screenOrientation="portrait"/>
+        <activity android:name=".archive_votes"
+            android:label=""
+            android:screenOrientation="portrait">
+        </activity>
         <activity
-            android:name=".GoogSignIn"
+            android:name=".advocacy"
+            android:label=""
             android:screenOrientation="portrait" />
         <activity
             android:name=".results"
-            android:noHistory="true"
+            android:label=""
             android:screenOrientation="portrait" />
         <activity
             android:name=".content"
+            android:label=""
             android:screenOrientation="portrait" />
         <activity
             android:name=".admin"
-            android:noHistory="true"
+            android:label="Admin Login"
             android:screenOrientation="portrait" />
         <activity
             android:name=".done"
-            android:noHistory="true"
             android:screenOrientation="portrait" />
         <activity
             android:name=".congrats"
-            android:noHistory="true" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".forgotpassword"
-            android:noHistory="true"
             android:screenOrientation="portrait" />
         <activity
             android:name=".registered"
-            android:noHistory="true"
+            android:label=""
             android:screenOrientation="portrait" />
         <activity
             android:name=".voter"
-            android:noHistory="true"
+            android:label=""
             android:screenOrientation="portrait" />
         <activity
             android:name=".splash"
-            android:noHistory="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -66,11 +60,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:noHistory="true"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Welcome"
-            android:noHistory="true"
+            android:label="Voter Login"
             android:screenOrientation="portrait" />
 
         <meta-data

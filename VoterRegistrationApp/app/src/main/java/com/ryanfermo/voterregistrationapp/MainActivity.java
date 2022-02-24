@@ -1,6 +1,7 @@
 package com.ryanfermo.voterregistrationapp;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,34 +11,40 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener,PopupMenu.OnMenuItemClickListener {
-    private TextView  forgot, nouser;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+    private TextView  forgot, nouser, admin;
     private EditText editTextEmail, editTextpPassword;
-    private ImageButton Login, Google;
+    private Button Login;
     private long backPressedTime;
     private Toast backToast;
     private FirebaseAuth mAuth;
     private ProgressBar progressBar;
-    GoogleSignInClient mGoogleSignInClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,36 +54,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         nouser=(TextView)findViewById(R.id.nouser);
         nouser.setVisibility(View.GONE);
 
-        Login=(ImageButton)findViewById(R.id.Login);
+        Login=(Button)findViewById(R.id.Login);
         Login.setOnClickListener(this);
+
+        admin=(TextView)findViewById(R.id.admin);
+        admin.setOnClickListener(this);
 
         editTextEmail=(EditText)findViewById(R.id.editTextEmail);
         editTextpPassword=(EditText)findViewById(R.id.editTextTextPassword);
 
         forgot=(TextView)findViewById(R.id.forgot);
         forgot.setOnClickListener(this);
-
         progressBar=(ProgressBar)findViewById(R.id.progressBar);
         mAuth=FirebaseAuth.getInstance();
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail()
-                .build();
-        mGoogleSignInClient= GoogleSignIn.getClient(this, gso);
+
     }
 
     @Override
     public void onBackPressed() {
-        if(backPressedTime+2000>System.currentTimeMillis()) {
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
             backToast.cancel();
             super.onBackPressed();
             return;
-        }
-        else{
-            backToast= Toast.makeText(getBaseContext(),"Press back again to exit", Toast.LENGTH_SHORT);
+        } else {
+            backToast = Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT);
             backToast.show();
         }
-        backPressedTime=System.currentTimeMillis();
+        backPressedTime = System.currentTimeMillis();
     }
 
     @Override
@@ -89,6 +93,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.forgot:
                 startActivity(new Intent(this,forgotpassword.class));
+                finish();
+                break;
+
+            case R.id.admin:
+                startActivity(new Intent(this,admin.class));
+                finish();
                 break;
         }
     }
@@ -126,6 +136,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
                     if(user.isEmailVerified()){
                         startActivity(new Intent(MainActivity.this, voter.class));
+                        finish();
                         progressBar.setVisibility(View.GONE);
                     }else{
                         user.sendEmailVerification();
@@ -135,51 +146,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }else{
                     progressBar.setVisibility(View.GONE);
                     nouser.setVisibility(View.VISIBLE);
-                    Toast.makeText(MainActivity.this,"Failed to Login! Please check your credentials", Toast.LENGTH_LONG).show();;
+                    Toast.makeText(MainActivity.this,"Failed to Login! You already Voted or Please check your credentials", Toast.LENGTH_LONG).show();;
                 }
             }
         });
-    }
-
-    public void showPopup(View view) {
-        PopupMenu popup = new PopupMenu(this, view);
-        popup.setOnMenuItemClickListener((PopupMenu.OnMenuItemClickListener) this);
-        popup.inflate(R.menu.popup_menu);
-        popup.show();
-    }
-    @Override
-    public boolean onMenuItemClick(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.appvoter:
-                Toast.makeText(this, "Voter Section", Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.appadmin:
-                Toast.makeText(this, "Admin Section", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this,admin.class));
-                return true;
-            case R.id.signout:
-                Signout();
-                return true;
-            default:
-                return false;
-        }
-    }
-
-    private void Signout() {
-        mGoogleSignInClient.signOut().addOnCompleteListener(this,new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                Toast.makeText(MainActivity.this, "Signed out Successfully", Toast.LENGTH_LONG).show();
-                Intent intent=new Intent(MainActivity.this,Welcome.class );
-                startActivity(intent);
-            }
-        });
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater=getMenuInflater();
-        inflater.inflate(R.menu.popup_menu,menu);
-        return super.onCreateOptionsMenu(menu);
     }
 }

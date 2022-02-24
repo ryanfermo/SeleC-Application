@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+        <TextView
+            android:id="@+id/ItemDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="STUDENT COUNCIL ELECETION PAST RESULT"
+            android:fontFamily="@font/adamina"
+            android:textColor="#FF9800"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/President1"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_below="@+id/ItemDesc"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/PA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Votes"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_marginTop="60dp"
+            android:layout_toRightOf="@+id/President1"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/President2"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_below="@+id/PA"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/PB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Votes"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_marginTop="80dp"
+            android:layout_toRightOf="@+id/President2"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/VicePresident1"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_below="@+id/PB"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/VPA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Votes"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_marginTop="100dp"
+            android:layout_toRightOf="@+id/VicePresident1"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/VicePresident2"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_below="@+id/VPA"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/VPB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Votes"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_marginTop="120dp"
+            android:layout_toRightOf="@+id/VicePresident2"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/Secretary1"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_below="@+id/VPB"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/SA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Votes"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_marginTop="140dp"
+            android:layout_toRightOf="@+id/Secretary1"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/Secretary2"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_below="@+id/SA"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/SB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Votes"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_marginTop="160dp"
+            android:layout_toRightOf="@+id/Secretary2"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/Treasurer1"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_below="@+id/SB"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/TA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Votes"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_marginTop="180dp"
+            android:layout_toRightOf="@+id/Treasurer1"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/Treasurer2"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_below="@+id/TA"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/TB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Votes"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_marginTop="200dp"
+            android:layout_toRightOf="@+id/Treasurer2"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/Auditor1"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_below="@+id/TB"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/OA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Votes"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_marginTop="220dp"
+            android:layout_toRightOf="@+id/Auditor1"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/Auditor2"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_below="@+id/OA"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/OB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Votes"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_marginTop="240dp"
+            android:layout_toRightOf="@+id/Auditor2"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/PRO1"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_below="@+id/OB"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/PRA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Votes"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_marginTop="260dp"
+            android:layout_toRightOf="@+id/PRO1"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/PRO2"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_below="@+id/PRA"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/PRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Votes"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_marginTop="280dp"
+            android:layout_toRightOf="@+id/PRO2"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/REP1"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_below="@+id/PRB"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/REPA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Votes"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_marginTop="300dp"
+            android:layout_toRightOf="@+id/REP1"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/REP2"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_below="@+id/REPA"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/REPB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Votes"
+            android:fontFamily="@font/adamina"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:layout_marginTop="320dp"
+            android:layout_toRightOf="@+id/REP2"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:id="@+id/ARDATE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/REPB"
+            android:layout_marginLeft="210dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/adamina"
+            android:text="MMM dd, yyyy HH:mm:ss"
+            android:textColor="#FA9500"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+</LinearLayout>

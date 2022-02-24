@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CCFFCC"
+    android:background="@color/white"
     tools:context=".congrats">
 
     <ImageView
@@ -21,10 +21,11 @@
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="247dp"
+        android:layout_width="280dp"
         android:layout_height="62dp"
         android:gravity="center"
         android:text="Congratulations!"
+        android:fontFamily="@font/adamina"
         android:textColor="#000000"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -53,6 +54,7 @@
         android:layout_height="36dp"
         android:gravity="center"
         android:text="You are succefully registered."
+        android:fontFamily="@font/adamina"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -62,36 +64,34 @@
         app:layout_constraintTop_toBottomOf="@+id/emailadd"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageButton
+    <Button
         android:id="@+id/back"
         android:layout_width="118dp"
         android:layout_height="49dp"
-        android:background="#00FFFFFF"
-        android:scaleType="fitXY"
-        android:textAllCaps="false"
-        android:textSize="18sp"
+        android:background="@drawable/custom_input"
+        android:fontFamily="@font/adamina"
+        android:text="Back"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.238"
+        app:layout_constraintHorizontal_bias="0.156"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.785"
-        app:srcCompat="@drawable/back" />
+        app:layout_constraintVertical_bias="0.785" />
 
-    <ImageButton
+    <Button
         android:id="@+id/next"
         android:layout_width="118dp"
         android:layout_height="49dp"
-        android:background="#00FFFFFF"
-        android:scaleType="fitXY"
-        android:textAllCaps="false"
-        android:textSize="18sp"
+        android:background="@drawable/custom_input"
+        android:fontFamily="@font/adamina"
+        android:text="Next"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.754"
+        app:layout_constraintHorizontal_bias="0.846"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.785"
-        app:srcCompat="@drawable/next" />
+        app:layout_constraintVertical_bias="0.785" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,24 +1,35 @@
 package com.ryanfermo.voterregistrationapp;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -30,13 +41,20 @@ import com.squareup.picasso.Picasso;
 
 import static android.content.ContentValues.TAG;
 
-public class voter extends AppCompatActivity implements View.OnClickListener{
-    ImageButton back, submit, candidate1, candidate2, candidate3, candidate4, candidate5, candidate6, candidate7, candidate8, candidate9, candidate10, candidate111, candidate112,candidate113,candidate114;
+public class voter extends AppCompatActivity implements View.OnClickListener,NavigationView.OnNavigationItemSelectedListener{
+    ImageButton candidate1, candidate2, candidate3, candidate4, candidate5, candidate6, candidate7, candidate8, candidate9, candidate10, candidate111, candidate112,candidate113,candidate114;
     TextView C1, C2, C3, C4, P1, P2, P3, P4,C5, C6, C7, C8, P5, P6, P7, P8,C9, C10, C11, C12, P9, P10, P11, P12,C13,C14,P13,P14;
     String president = "", vicepresident = "",secretary="",treasurer="",auditor="",pro="",representative="";
     Integer PA,PB,VPA,VPB,SA,SB,TA,TB,OA,OB,PRA,PRB,RA,RB;
     DatabaseReference votes;
+    Button back, submit;
     DatabaseReference candidate,candidate12,candidate13,candidate14,can5,can6,can7,can8,can9,can10,can11,can12,can13,can14;
+    String N1,N2,N3,N4,N5,N6,N7;
+    DrawerLayout drawer;
+    Toolbar toolbar;
+    NavigationView navigationView;
+    FirebaseUser currentuUser;
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,10 +88,25 @@ public class voter extends AppCompatActivity implements View.OnClickListener{
         C14 = (TextView) findViewById(R.id.namerep1);
         P13 = (TextView) findViewById(R.id.partyrep);
         P14 = (TextView) findViewById(R.id.partyrep1);
-        back = (ImageButton) findViewById(R.id.back);
+        back = (Button) findViewById(R.id.back);
         back.setOnClickListener(this);
 
-        submit = (ImageButton) findViewById(R.id.submit);
+        mAuth=FirebaseAuth.getInstance();
+        currentuUser=mAuth.getCurrentUser();
+        updateNavHeader();
+
+        drawer=findViewById(R.id.drawer_layout);
+        navigationView=findViewById(R.id.nav_view);
+        toolbar=findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        navigationView.bringToFront();
+        ActionBarDrawerToggle toggle=new ActionBarDrawerToggle(this,drawer,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setItemIconTintList(null);
+
+        submit = (Button) findViewById(R.id.submit);
         submit.setOnClickListener(this);
 
         candidate1 = (ImageButton) findViewById(R.id.candidate1);
@@ -528,6 +561,7 @@ public class voter extends AppCompatActivity implements View.OnClickListener{
     private void candidate4() {
         candidate4.setImageResource(R.drawable.voted);
         vicepresident ="VicePresident B";
+        N2=C4.getText().toString().trim();
         VPB=1;
         VPA=0;
         candidate13=FirebaseDatabase.getInstance().getReference().child("Candidate").child("Candidate3");
@@ -559,6 +593,7 @@ public class voter extends AppCompatActivity implements View.OnClickListener{
     private void candidate3() {
         candidate3.setImageResource(R.drawable.voted);
         vicepresident ="VicePresident A";
+        N2=C3.getText().toString().trim();
         VPA=1;
         VPB=0;
         candidate14=FirebaseDatabase.getInstance().getReference().child("Candidate").child("Candidate4");
@@ -589,6 +624,7 @@ public class voter extends AppCompatActivity implements View.OnClickListener{
     private void candidate2() {
         candidate2.setImageResource(R.drawable.voted);
         president = "President B";
+        N1=C2.getText().toString().trim();
         PB=1;
         PA=0;
         candidate=FirebaseDatabase.getInstance().getReference().child("Candidate").child("Candidate1");
@@ -619,6 +655,7 @@ public class voter extends AppCompatActivity implements View.OnClickListener{
     private void candidate1() {
         candidate1.setImageResource(R.drawable.voted);
         president = "President A";
+        N1=C1.getText().toString().trim();
         PA=1;
         PB=0;
         candidate12=FirebaseDatabase.getInstance().getReference().child("Candidate").child("Candidate2");
@@ -650,6 +687,7 @@ public class voter extends AppCompatActivity implements View.OnClickListener{
     private void candidate6() {
         candidate6.setImageResource(R.drawable.voted);
         secretary= "Secretary B";
+        N3=C6.getText().toString().trim();
         SB=1;
         SA=0;
         can5=FirebaseDatabase.getInstance().getReference().child("Candidate").child("Candidate5");
@@ -680,6 +718,7 @@ public class voter extends AppCompatActivity implements View.OnClickListener{
     private void candidate5() {
         candidate5.setImageResource(R.drawable.voted);
         secretary = "Secretary A";
+        N3=C5.getText().toString().trim();
         SA=1;
         SB=0;
         can6=FirebaseDatabase.getInstance().getReference().child("Candidate").child("Candidate6");
@@ -711,6 +750,7 @@ public class voter extends AppCompatActivity implements View.OnClickListener{
     private void candidate8() {
         candidate8.setImageResource(R.drawable.voted);
         treasurer= "Treasurer B";
+        N4=C8.getText().toString().trim();
         TB=1;
         TA=0;
         can7=FirebaseDatabase.getInstance().getReference().child("Candidate").child("Candidate7");
@@ -741,6 +781,7 @@ public class voter extends AppCompatActivity implements View.OnClickListener{
     private void candidate7() {
         candidate7.setImageResource(R.drawable.voted);
         treasurer = "Treasurer A";
+        N4=C7.getText().toString().trim();
         TA=1;
         TB=0;
         can8=FirebaseDatabase.getInstance().getReference().child("Candidate").child("Candidate8");
@@ -768,11 +809,10 @@ public class voter extends AppCompatActivity implements View.OnClickListener{
         });
     }
 
-
-
     private void candidate10() {
         candidate10.setImageResource(R.drawable.voted);
         auditor= "Auditor B";
+        N5=C10.getText().toString().trim();
         OB=1;
         OA=0;
         can9=FirebaseDatabase.getInstance().getReference().child("Candidate").child("Candidate9");
@@ -803,6 +843,7 @@ public class voter extends AppCompatActivity implements View.OnClickListener{
     private void candidate9() {
         candidate9.setImageResource(R.drawable.voted);
         auditor = "Auditor A";
+        N5=C9.getText().toString().trim();
         OA=1;
         OB=0;
         can10=FirebaseDatabase.getInstance().getReference().child("Candidate").child("Candidate10");
@@ -830,10 +871,9 @@ public class voter extends AppCompatActivity implements View.OnClickListener{
         });
     }
 
-
-
     private void candidate12() {
         candidate112.setImageResource(R.drawable.voted);
+        N6=C12.getText().toString().trim();
         pro= "PRO B";
         PRB=1;
         PRA=0;
@@ -864,6 +904,7 @@ public class voter extends AppCompatActivity implements View.OnClickListener{
 
     private void candidate11() {
         candidate111.setImageResource(R.drawable.voted);
+        N6=C11.getText().toString().trim();
         pro = "PRO A";
         PRA=1;
         PRB=0;
@@ -897,6 +938,7 @@ public class voter extends AppCompatActivity implements View.OnClickListener{
     private void candidate14() {
         candidate114.setImageResource(R.drawable.voted);
         representative= "Representative B";
+        N7=C14.getText().toString().trim();
         RB=1;
         RA=0;
         can13=FirebaseDatabase.getInstance().getReference().child("Candidate").child("Candidate13");
@@ -927,6 +969,7 @@ public class voter extends AppCompatActivity implements View.OnClickListener{
     private void candidate13() {
         candidate113.setImageResource(R.drawable.voted);
         representative = "Representative A";
+        N7=C13.getText().toString().trim();
         RA=1;
         RB=0;
         can14=FirebaseDatabase.getInstance().getReference().child("Candidate").child("Candidate14");
@@ -956,12 +999,15 @@ public class voter extends AppCompatActivity implements View.OnClickListener{
 
 
     private void submit() {
-        if (president.isEmpty() || vicepresident.isEmpty()) {
-            Toast.makeText(voter.this, "No votes are submitted", Toast.LENGTH_LONG).show();
+        if (president.isEmpty() || vicepresident.isEmpty()||secretary.isEmpty()||treasurer.isEmpty()||auditor.isEmpty()||pro.isEmpty()||representative.isEmpty()) {
+            Toast.makeText(voter.this, "You missed to pick a candidate for certain position, No votes are submitted", Toast.LENGTH_LONG).show();
         } else {
 
             AlertDialog.Builder builder =new AlertDialog.Builder(voter.this);
-            builder.setMessage("Are you sure you want to submit your vote? You won't be able to undo changes after.")
+            builder.setMessage(Html.fromHtml("Are you sure you want to submit your voted candidates?<br>You won't be able to undo changes after.<br><br>President: <b>"+N1+
+                    "</b><br>Vicepresident: <b>"+N2+"</b><br>Secretary: <b>"+N3+"</b><br>Treasurer: <b>"+N4+"</b><br>Auditor: <b>"+N5+"</b><br>PRO: <b>"+N6+"</b><br>Representative: <b>"+N7+"</b>"))
+                    .setIcon(R.drawable.iconselec)
+                    .setTitle("Selected Candidates")
                     .setPositiveButton("submit", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -970,6 +1016,13 @@ public class voter extends AppCompatActivity implements View.OnClickListener{
                             Toast.makeText(voter.this, "Votes are submitted", Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(voter.this, done.class);
                             startActivity(intent);
+                            finish();
+                            FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(null).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    FirebaseAuth.getInstance().getCurrentUser().delete();
+                                }
+                            });
                         }
                     })
                     .setNegativeButton("Back",null);
@@ -977,6 +1030,42 @@ public class voter extends AppCompatActivity implements View.OnClickListener{
             alert.show();
 
         }
+    }
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()){
+            case R.id.appvoter:
+                Intent intent=new Intent(voter.this,advocacy.class );
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.votingsec:
+                Intent intent1=new Intent(voter.this,voter.class );
+                startActivity(intent1);
+                finish();
+                break;
+            case R.id.signout:
+                Signout();
+                break;
+        }
+        return true;
+    }
+
+    private void Signout() {
+                Toast.makeText(voter.this, "Signed out Successfully", Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(voter.this,MainActivity.class );
+                startActivity(intent);
+                finish();
+    }
+
+    public void updateNavHeader(){
+        navigationView=findViewById(R.id.nav_view);
+        View HeaderView=navigationView.getHeaderView(0);
+        TextView navUserName= HeaderView.findViewById(R.id.nav_username);
+        ImageView imageview = (ImageView) HeaderView.findViewById(R.id.nav_imageView);
+        imageview.setImageResource(R.drawable.selecprofile);
+        navUserName.setText(currentuUser.getEmail());
+
     }
 
 }
