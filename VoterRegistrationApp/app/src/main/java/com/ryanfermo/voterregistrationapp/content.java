@@ -51,7 +51,7 @@ import java.util.HashMap;
 import java.util.UUID;
 
 public class content extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener,NavigationView.OnNavigationItemSelectedListener {
-    private Button Insert;
+    private Button Insert, Clear;
     EditText Name, Party, Advocacy;
     Spinner Position;
     String po,url;
@@ -79,6 +79,9 @@ public class content extends AppCompatActivity implements View.OnClickListener, 
 
         Insert = (Button) findViewById(R.id.insert);
         Insert.setOnClickListener(this);
+        Clear = (Button) findViewById(R.id.clear);
+        Clear.setOnClickListener(this);
+
         updateNavHeader();
         drawer=findViewById(R.id.drawer_layout);
         navigationView=findViewById(R.id.nav_view);
@@ -156,20 +159,20 @@ public class content extends AppCompatActivity implements View.OnClickListener, 
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String choice=parent.getItemAtPosition(position).toString();
         if(choice.equals("Select Position")){po="Position";}
-        if(choice.equals("President C1")){po="C1";}
-        if(choice.equals("President C2")){po="C2";}
-        if(choice.equals("Vice President C1")){po="C3";}
-        if(choice.equals("Vice President C2")){po="C4";}
-        if(choice.equals("Secretary C1")){po="C5";}
-        if(choice.equals("Secretary C2")){po="C6";}
-        if(choice.equals("Treasurer C1")){po="C7";}
-        if(choice.equals("Treasurer C2")){po="C8";}
-        if(choice.equals("Auditor C1")){po="C9";}
-        if(choice.equals("Auditor C2")){po="C10";}
-        if(choice.equals("PRO C1")){po="C11";}
-        if(choice.equals("PRO C2")){po="C12";}
-        if(choice.equals("Representative C1")){po="C13";}
-        if(choice.equals("Representative C2")){po="C14";}
+        if(choice.equals("President")){po="C1";}
+        if(choice.equals("Vice President")){po="C3";}
+        if(choice.equals("Secretary")){po="C5";}
+        if(choice.equals("Treasurer")){po="C7";}
+        if(choice.equals("Auditor")){po="C9";}
+        if(choice.equals("PRO")){po="C11";}
+        if(choice.equals("Representative")){po="C13";}
+        if(choice.equals("1President")){po="C2";}
+        if(choice.equals("1Vice President")){po="C4";}
+        if(choice.equals("1Secretary")){po="C6";}
+        if(choice.equals("1Treasurer")){po="C8";}
+        if(choice.equals("1Auditor")){po="C10";}
+        if(choice.equals("1PRO")){po="C12";}
+        if(choice.equals("1Representative")){po="C14";}
     }
 
     @Override
@@ -181,8 +184,20 @@ public class content extends AppCompatActivity implements View.OnClickListener, 
             case R.id.insert:
                 insertcandidate();
                 break;
+            case R.id.clear:
+                clearcandidate();
+                break;
 
         }
+    }
+
+    private void clearcandidate() {
+        Name.setText("");
+        Party.setText("");
+        Advocacy.setText("");
+        sample.setText("");
+        ImageView.setImageResource(R.drawable.avatars);
+        Position.setSelection(0);
     }
 
     private void insertcandidate() {
@@ -381,6 +396,11 @@ public class content extends AppCompatActivity implements View.OnClickListener, 
             case R.id.admin_result:
                 Intent intent2=new Intent(this,results.class);
                 startActivity(intent2);
+                finish();
+                break;
+            case R.id.admin_chart:
+                Intent intent5=new Intent(this,charting.class);
+                startActivity(intent5);
                 finish();
                 break;
             case R.id.admin_archive:

@@ -33,7 +33,7 @@
                 app:titleTextColor="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="#FF6F00"
+                android:background="#09aacc"
                 android:elevation="4dp" >
 
                 <TextView
@@ -70,7 +70,7 @@
             android:layout_marginRight="30dp" />
 
         <Button
-            android:id="@+id/back"
+            android:id="@+id/clear"
             android:layout_width="118dp"
             android:layout_height="49dp"
             android:background="@drawable/custom_input"

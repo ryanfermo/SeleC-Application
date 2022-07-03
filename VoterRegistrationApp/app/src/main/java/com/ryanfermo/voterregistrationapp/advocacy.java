@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageButton;
@@ -45,9 +46,11 @@ public class advocacy extends AppCompatActivity implements NavigationView.OnNavi
     Toolbar toolbar;
     ImageButton candidate1, candidate2, candidate3, candidate4, candidate5, candidate6, candidate7, candidate8, candidate9, candidate10, candidate111, candidate112,candidate113,candidate114;
     TextView C1, C2, C3, C4, P1, P2, P3, P4,C5, C6, C7, C8, P5, P6, P7, P8,C9, C10, C11, C12, P9, P10, P11, P12,C13,C14,P13,P14;
+    TextView party1, party2, party3, party4, party5, party6, party7, party8, party9, party10, party11, party12, party13, party14;
     DatabaseReference candidate,candidate12,candidate13,candidate14,can5,can6,can7,can8,can9,can10,can11,can12,can13,can14;
     NavigationView navigationView;
     FirebaseUser currentuUser;
+    Button vote;
     private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +85,20 @@ public class advocacy extends AppCompatActivity implements NavigationView.OnNavi
         P12 = (TextView) findViewById(R.id.advocacy12);
         P13 = (TextView) findViewById(R.id.advocacy13);
         P14 = (TextView) findViewById(R.id.advocacy14);
-
+        party1=(TextView)findViewById(R.id.party1);
+        party2=(TextView)findViewById(R.id.party2);
+        party3=(TextView)findViewById(R.id.party3);
+        party4=(TextView)findViewById(R.id.party4);
+        party5=(TextView)findViewById(R.id.party5);
+        party6=(TextView)findViewById(R.id.party6);
+        party7=(TextView)findViewById(R.id.party7);
+        party8=(TextView)findViewById(R.id.party8);
+        party9=(TextView)findViewById(R.id.party9);
+        party10=(TextView)findViewById(R.id.party10);
+        party11=(TextView)findViewById(R.id.party11);
+        party12=(TextView)findViewById(R.id.party12);
+        party13=(TextView)findViewById(R.id.party13);
+        party14=(TextView)findViewById(R.id.party14);
         candidate1 = (ImageButton) findViewById(R.id.candidate1);
         candidate2 = (ImageButton) findViewById(R.id.candidate2);
         candidate3 = (ImageButton) findViewById(R.id.candidate3);
@@ -120,11 +136,14 @@ public class advocacy extends AppCompatActivity implements NavigationView.OnNavi
                     String name = dataSnapshot.child("name").getValue().toString();
                     String advocacy = dataSnapshot.child("advocacy").getValue().toString().replace("\\n", "\n");
                     String image = dataSnapshot.child("image").getValue().toString();
+                    String party = dataSnapshot.child("party").getValue().toString();
                     Log.d("name", name);
                     Log.d("advocacy", advocacy);
                     Log.d("image", image);
+                    Log.d("party", party);
                     C1.setText(name);
                     P1.setText(advocacy);
+                    party1.setText(party);
                     Picasso.get().load(image).into(candidate1);
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
@@ -145,11 +164,14 @@ public class advocacy extends AppCompatActivity implements NavigationView.OnNavi
                     String name = dataSnapshot.child("name").getValue().toString();
                     String advocacy = dataSnapshot.child("advocacy").getValue().toString().replace("\\n", "\n");
                     String image = dataSnapshot.child("image").getValue().toString();
+                    String party = dataSnapshot.child("party").getValue().toString();
                     Log.d("name", name);
                     Log.d("advocacy", advocacy);
                     Log.d("image", image);
+                    Log.d("party", party);
                     C2.setText(name);
                     P2.setText(advocacy);
+                    party2.setText(party);
                     Picasso.get().load(image).into(candidate2);
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
@@ -170,11 +192,14 @@ public class advocacy extends AppCompatActivity implements NavigationView.OnNavi
                     String name = dataSnapshot.child("name").getValue().toString();
                     String advocacy = dataSnapshot.child("advocacy").getValue().toString().replace("\\n", "\n");
                     String image = dataSnapshot.child("image").getValue().toString();
+                    String party = dataSnapshot.child("party").getValue().toString();
                     Log.d("name", name);
                     Log.d("advocacy", advocacy);
                     Log.d("image", image);
+                    Log.d("party", party);
                     C3.setText(name);
                     P3.setText(advocacy);
+                    party3.setText(party);
                     Picasso.get().load(image).into(candidate3);
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
@@ -195,11 +220,14 @@ public class advocacy extends AppCompatActivity implements NavigationView.OnNavi
                     String name = dataSnapshot.child("name").getValue().toString();
                     String advocacy = dataSnapshot.child("advocacy").getValue().toString().replace("\\n", "\n");
                     String image = dataSnapshot.child("image").getValue().toString();
+                    String party = dataSnapshot.child("party").getValue().toString();
                     Log.d("name", name);
                     Log.d("advocacy", advocacy);
                     Log.d("image", image);
+                    Log.d("party", party);
                     C4.setText(name);
                     P4.setText(advocacy);
+                    party4.setText(party);
                     Picasso.get().load(image).into(candidate4);
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
@@ -220,11 +248,14 @@ public class advocacy extends AppCompatActivity implements NavigationView.OnNavi
                     String name = dataSnapshot.child("name").getValue().toString();
                     String advocacy= dataSnapshot.child("advocacy").getValue().toString().replace("\\n", "\n");
                     String image = dataSnapshot.child("image").getValue().toString();
+                    String party = dataSnapshot.child("party").getValue().toString();
                     Log.d("name", name);
                     Log.d("advocacy", advocacy);
                     Log.d("image", image);
+                    Log.d("party", party);
                     C5.setText(name);
                     P5.setText(advocacy);
+                    party5.setText(party);
                     Picasso.get().load(image).into(candidate5);
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
@@ -245,11 +276,14 @@ public class advocacy extends AppCompatActivity implements NavigationView.OnNavi
                     String name = dataSnapshot.child("name").getValue().toString();
                     String advocacy = dataSnapshot.child("advocacy").getValue().toString().replace("\\n", "\n");
                     String image = dataSnapshot.child("image").getValue().toString();
+                    String party = dataSnapshot.child("party").getValue().toString();
                     Log.d("name", name);
                     Log.d("advocacy", advocacy);
                     Log.d("image", image);
+                    Log.d("party", party);
                     C6.setText(name);
                     P6.setText(advocacy);
+                    party6.setText(party);
                     Picasso.get().load(image).into(candidate6);
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
@@ -270,11 +304,14 @@ public class advocacy extends AppCompatActivity implements NavigationView.OnNavi
                     String name = dataSnapshot.child("name").getValue().toString();
                     String advocacy = dataSnapshot.child("advocacy").getValue().toString().replace("\\n", "\n");
                     String image = dataSnapshot.child("image").getValue().toString();
+                    String party = dataSnapshot.child("party").getValue().toString();
                     Log.d("name", name);
                     Log.d("advocacy", advocacy);
                     Log.d("image", image);
+                    Log.d("party", party);
                     C7.setText(name);
                     P7.setText(advocacy);
+                    party7.setText(party);
                     Picasso.get().load(image).into(candidate7);
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
@@ -295,11 +332,14 @@ public class advocacy extends AppCompatActivity implements NavigationView.OnNavi
                     String name = dataSnapshot.child("name").getValue().toString();
                     String advocacy = dataSnapshot.child("advocacy").getValue().toString().replace("\\n", "\n");
                     String image = dataSnapshot.child("image").getValue().toString();
+                    String party = dataSnapshot.child("party").getValue().toString();
                     Log.d("name", name);
                     Log.d("advocacy", advocacy);
                     Log.d("image", image);
+                    Log.d("party", party);
                     C8.setText(name);
                     P8.setText(advocacy);
+                    party8.setText(party);
                     Picasso.get().load(image).into(candidate8);
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
@@ -320,11 +360,14 @@ public class advocacy extends AppCompatActivity implements NavigationView.OnNavi
                     String name = dataSnapshot.child("name").getValue().toString();
                     String advocacy = dataSnapshot.child("advocacy").getValue().toString().replace("\\n", "\n");
                     String image = dataSnapshot.child("image").getValue().toString();
+                    String party = dataSnapshot.child("party").getValue().toString();
                     Log.d("name", name);
                     Log.d("advocacy", advocacy);
                     Log.d("image", image);
+                    Log.d("party", party);
                     C9.setText(name);
                     P9.setText(advocacy);
+                    party9.setText(party);
                     Picasso.get().load(image).into(candidate9);
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
@@ -345,11 +388,14 @@ public class advocacy extends AppCompatActivity implements NavigationView.OnNavi
                     String name = dataSnapshot.child("name").getValue().toString();
                     String advocacy = dataSnapshot.child("advocacy").getValue().toString().replace("\\n", "\n");
                     String image = dataSnapshot.child("image").getValue().toString();
+                    String party = dataSnapshot.child("party").getValue().toString();
                     Log.d("name", name);
                     Log.d("advocacy", advocacy);
                     Log.d("image", image);
+                    Log.d("party", party);
                     C10.setText(name);
                     P10.setText(advocacy);
+                    party10.setText(party);
                     Picasso.get().load(image).into(candidate10);
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
@@ -370,11 +416,14 @@ public class advocacy extends AppCompatActivity implements NavigationView.OnNavi
                     String name = dataSnapshot.child("name").getValue().toString();
                     String advocacy = dataSnapshot.child("advocacy").getValue().toString().replace("\\n", "\n");
                     String image = dataSnapshot.child("image").getValue().toString();
+                    String party = dataSnapshot.child("party").getValue().toString();
                     Log.d("name", name);
-                    Log.d("name", advocacy);
+                    Log.d("advocacy", advocacy);
                     Log.d("image", image);
+                    Log.d("party", party);
                     C11.setText(name);
                     P11.setText(advocacy);
+                    party11.setText(party);
                     Picasso.get().load(image).into(candidate111);
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
@@ -395,11 +444,14 @@ public class advocacy extends AppCompatActivity implements NavigationView.OnNavi
                     String name = dataSnapshot.child("name").getValue().toString();
                     String advocacy = dataSnapshot.child("advocacy").getValue().toString().replace("\\n", "\n");
                     String image = dataSnapshot.child("image").getValue().toString();
+                    String party = dataSnapshot.child("party").getValue().toString();
                     Log.d("name", name);
                     Log.d("advocacy", advocacy);
                     Log.d("image", image);
+                    Log.d("party", party);
                     C12.setText(name);
                     P12.setText(advocacy);
+                    party12.setText(party);
                     Picasso.get().load(image).into(candidate112);
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
@@ -420,11 +472,14 @@ public class advocacy extends AppCompatActivity implements NavigationView.OnNavi
                     String name = dataSnapshot.child("name").getValue().toString();
                     String advocacy = dataSnapshot.child("advocacy").getValue().toString().replace("\\n", "\n");
                     String image = dataSnapshot.child("image").getValue().toString();
+                    String party = dataSnapshot.child("party").getValue().toString();
                     Log.d("name", name);
                     Log.d("advocacy", advocacy);
                     Log.d("image", image);
+                    Log.d("party", party);
                     C13.setText(name);
                     P13.setText(advocacy);
+                    party13.setText(party);
                     Picasso.get().load(image).into(candidate113);
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
@@ -445,11 +500,14 @@ public class advocacy extends AppCompatActivity implements NavigationView.OnNavi
                     String name = dataSnapshot.child("name").getValue().toString();
                     String advocacy = dataSnapshot.child("advocacy").getValue().toString().replace("\\n", "\n");
                     String image = dataSnapshot.child("image").getValue().toString();
+                    String party = dataSnapshot.child("party").getValue().toString();
                     Log.d("name", name);
                     Log.d("advocacy", advocacy);
                     Log.d("image", image);
+                    Log.d("party", party);
                     C14.setText(name);
                     P14.setText(advocacy);
+                    party14.setText(party);
                     Picasso.get().load(image).into(candidate114);
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
@@ -459,6 +517,14 @@ public class advocacy extends AppCompatActivity implements NavigationView.OnNavi
             @Override
             public void onCancelled(DatabaseError error) {
                 Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+        vote=(Button)findViewById(R.id.vote);
+        vote.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent1=new Intent(advocacy.this,voter.class );
+                startActivity(intent1);
+                finish();
             }
         });
     }

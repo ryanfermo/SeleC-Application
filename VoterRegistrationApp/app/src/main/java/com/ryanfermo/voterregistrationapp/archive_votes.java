@@ -5,11 +5,18 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Paint;
+import android.graphics.pdf.PdfDocument;
 import android.os.Bundle;
+import android.os.Environment;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,6 +37,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,11 +50,12 @@ public class archive_votes extends AppCompatActivity implements NavigationView.O
     Toolbar toolbar;
     NavigationView navigationView;
     ListAdapter adapter;
+    String pdf;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_archive_votes);
-
+        ActivityCompat.requestPermissions(archive_votes.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, PackageManager.PERMISSION_GRANTED);
         updateNavHeader();
         drawer=findViewById(R.id.drawer_layout);
         navigationView=findViewById(R.id.nav_view);
@@ -86,20 +96,64 @@ public class archive_votes extends AppCompatActivity implements NavigationView.O
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 ItemsModel trans =archiveList.get(position);
-                showUpdateDialog(trans.getId());
+                showUpdateDialog(trans.getId(), trans.getPresident1(), trans.getPresident2(), trans.getVice1(), trans.getVice2(), trans.getSecretary1(), trans.getSecretary2(), trans.getTreasurer1(), trans.getTreasurer2(), trans.getAuditor1(),
+                        trans.getAuditor2(), trans.getPro1(), trans.getPro2(), trans.getRep1(), trans.getRep2(), trans.getPresident11(), trans.getPresident21(), trans.getVice11(), trans.getVice21(), trans.getSecretary11(), trans.getSecretary21(),
+                        trans.getTreasurer11(), trans.getTreasurer21(), trans.getAuditor11(), trans.getAuditor21(), trans.getPro11(), trans.getPro21(), trans.getRep11(), trans.getRep21(), trans.getArdate());
                 return false;
             }
         });
     }
 
-    private void showUpdateDialog(String id) {
+    private void showUpdateDialog(String id, String president1, String president2, String vice1, String vice2, String secretary1, String secretary2, String treasurer1, String treasurer2,
+                                  String auditor1, String auditor2, String pro1, String pro2, String rep1, String rep2, String president11, String president21, String vice11, String vice21, String secretary11, String secretary21, String treasurer11, String treasurer21,
+                                  String auditor11, String auditor21, String pro11, String pro21, String rep11, String rep21, String ardate) {
         AlertDialog.Builder mDialog = new AlertDialog.Builder(this);
         LayoutInflater inflater = getLayoutInflater();
         View mDialogView = inflater.inflate(R.layout.update_dialog, null);
         mDialog.setView(mDialogView);
         Button btnDelete =mDialogView.findViewById(R.id.delete);
+        Button createMYPDF =mDialogView.findViewById(R.id.save);
+        pdf="STUDENT COUNCIL ELECTION RESULTS \n"+ardate+" \n \n TALLY VOTES: \n President Candidate1: "+president1+" \n Total Votes: "+president11 + " \n President Candidate2: "+president2+" \n Total Votes: "+president21
+        +" \n Vice President Candidate1: "+vice1+" \n Total Votes: "+vice11+" \n Vice President Candidate2: "+vice2+" \n Total Votes: "+vice21+" \n Secretary Candidate1: "+secretary1+" \n Total Votes: "+secretary11
+                +" \n Secretary Candidate2: "+secretary2+" \n Total Votes: "+secretary21+" \n Treasurer Candidate1: "+treasurer1+" \n Total Votes: "+treasurer11+" \n Treasurer Candidate2: "+treasurer2+" \n Total Votes: "+treasurer21
+                +" \n Auditor Candidate1: "+auditor1+" \n Total Votes: "+auditor11+" \n Auditor Candidate2: "+auditor2+" \n Total Votes: "+auditor21+" \n PRO Candidate1: "+pro1+" \n Total Votes: "+pro11
+                +" \n PRO Candidate2: "+pro2+" \n Total Votes: "+pro21+" \n Representative Candidate1: "+rep1+" \n Total Votes: "+rep11+" \n Representative Candidate2: "+rep2+" \n Total Votes: "+rep21;
         final AlertDialog alertDialog=mDialog.create();
         alertDialog.show();
+        createMYPDF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PdfDocument myPdfDocument = new PdfDocument();
+                PdfDocument.PageInfo myPageInfo = new PdfDocument.PageInfo.Builder(300,600,1).create();
+                PdfDocument.Page myPage = myPdfDocument.startPage(myPageInfo);
+
+                Paint myPaint = new Paint();
+                String myString = pdf;
+                int x = 10, y=25;
+
+                for (String line:myString.split("\n")){
+                    myPage.getCanvas().drawText(line, x, y, myPaint);
+                    y+=myPaint.descent()-myPaint.ascent();
+                }
+
+                myPdfDocument.finishPage(myPage);
+
+                String myFilePath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString();
+                File myFile = new File(myFilePath, "SC-Election-Result.pdf");
+                Toast.makeText(archive_votes.this, "Successfuly Saved", Toast.LENGTH_SHORT).show();
+                alertDialog.dismiss();
+                try {
+                    myPdfDocument.writeTo(new FileOutputStream(myFile));
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                    Toast.makeText(archive_votes.this, "ERROR", Toast.LENGTH_SHORT).show();
+                }
+
+                myPdfDocument.close();
+            }
+        });
+
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -150,6 +204,11 @@ public class archive_votes extends AppCompatActivity implements NavigationView.O
             case R.id.admin_result:
                 Intent intent2=new Intent(this,results.class);
                 startActivity(intent2);
+                finish();
+                break;
+            case R.id.admin_chart:
+                Intent intent5=new Intent(this,charting.class);
+                startActivity(intent5);
                 finish();
                 break;
             case R.id.admin_archive:

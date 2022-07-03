@@ -16,6 +16,10 @@
             android:id="@+id/admin_result"
             android:icon="@drawable/selecresult"
             android:title="Result" />
+        <item
+            android:id="@+id/admin_chart"
+            android:icon="@drawable/pie"
+            android:title="Chart" />
     </group>
     <item android:title="Setting">
         <menu>

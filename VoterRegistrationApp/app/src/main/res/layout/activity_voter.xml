@@ -27,7 +27,7 @@
             app:titleTextColor="@color/white"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#FF6F00"
+            android:background="#09aacc"
             android:elevation="4dp" >
 
             <TextView
@@ -37,7 +37,7 @@
                 android:text="Voting Section"
                 android:fontFamily="@font/adamina"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
         </androidx.appcompat.widget.Toolbar>
 
@@ -66,18 +66,42 @@
 
                 <TextView
                     android:id="@+id/textView7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_width="289dp"
+                    android:layout_height="73dp"
                     android:fontFamily="@font/adamina"
                     android:gravity="center"
-                    android:text="STUDENT COUNCIL\nCANDIDATE"
-                    android:textColor="#000000"
-                    android:textSize="24sp"
+                    android:text="URDANETA CITY UNIVERSITY\nSTUDENT COUNCIL\nELECTION"
+                    android:textColor="#8F0808"
+                    android:textSize="12sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="37dp"
+                    android:layout_height="47dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView7"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.128"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/ucu" />
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="37dp"
+                    android:layout_height="47dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView7"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.868"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.161"
+                    app:srcCompat="@drawable/csld" />
 
                 <ImageButton
                     android:id="@+id/candidate1"
@@ -136,7 +160,7 @@
                     android:layout_width="365dp"
                     android:layout_height="41dp"
                     android:layout_marginTop="20dp"
-                    android:background="#FF9800"
+                    android:background="#E0EDEF"
                     android:fontFamily="@font/adamina"
                     android:gravity="center"
                     android:text="For Secretary"
@@ -231,7 +255,7 @@
                     android:layout_width="365dp"
                     android:layout_height="41dp"
                     android:layout_marginTop="20dp"
-                    android:background="#FF9800"
+                    android:background="#E0EDEF"
                     android:fontFamily="@font/adamina"
                     android:gravity="center"
                     android:text="For Treasurer"
@@ -325,7 +349,7 @@
                     android:layout_width="365dp"
                     android:layout_height="41dp"
                     android:layout_marginTop="20dp"
-                    android:background="#FF9800"
+                    android:background="#E0EDEF"
                     android:fontFamily="@font/adamina"
                     android:gravity="center"
                     android:text="For Auditor"
@@ -420,7 +444,7 @@
                     android:layout_width="365dp"
                     android:layout_height="41dp"
                     android:layout_marginTop="20dp"
-                    android:background="#FF9800"
+                    android:background="#E0EDEF"
                     android:fontFamily="@font/adamina"
                     android:gravity="center"
                     android:text="For PRO"
@@ -513,7 +537,7 @@
                     android:layout_width="365dp"
                     android:layout_height="41dp"
                     android:layout_marginTop="20dp"
-                    android:background="#FF9800"
+                    android:background="#E0EDEF"
                     android:fontFamily="@font/adamina"
                     android:gravity="center"
                     android:text="For Representative"
@@ -640,7 +664,7 @@
                     android:layout_width="365dp"
                     android:layout_height="41dp"
                     android:layout_marginTop="30dp"
-                    android:background="#FF9800"
+                    android:background="#E0EDEF"
                     android:fontFamily="@font/adamina"
                     android:gravity="center"
                     android:text="For President "
@@ -655,7 +679,7 @@
                     android:layout_width="365dp"
                     android:layout_height="41dp"
                     android:layout_marginTop="20dp"
-                    android:background="#FF9800"
+                    android:background="#E0EDEF"
                     android:fontFamily="@font/adamina"
                     android:gravity="center"
                     android:text="For Vice President"

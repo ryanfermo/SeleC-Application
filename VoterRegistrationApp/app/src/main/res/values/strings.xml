@@ -13,20 +13,21 @@
 
     <string-array name="Position">
         <item>Select Position</item>
-        <item>President C1</item>
-        <item>President C2</item>
-        <item>Vice President C1</item>
-        <item>Vice President C2</item>
-        <item>Secretary C1</item>
-        <item>Secretary C2</item>
-        <item>Treasurer C1</item>
-        <item>Treasurer C2</item>
-        <item>Auditor C1</item>
-        <item>Auditor C2</item>
-        <item>PRO C1</item>
-        <item>PRO C2</item>
-        <item>Representative C1</item>
-        <item>Representative C2</item>
+        <item>President</item>
+        <item>Vice President</item>
+        <item>Secretary</item>
+        <item>Treasurer</item>
+        <item>Auditor</item>
+        <item>PRO</item>
+        <item>Representative</item>
+        <item>*********************************</item>
+        <item>1President</item>
+        <item>1Vice President</item>
+        <item>1Secretary</item>
+        <item>1Treasurer</item>
+        <item>1Auditor</item>
+        <item>1PRO</item>
+        <item>1Representative</item>
     </string-array>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

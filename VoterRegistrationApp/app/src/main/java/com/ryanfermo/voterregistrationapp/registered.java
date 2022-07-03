@@ -60,7 +60,7 @@ import java.util.regex.Pattern;
 public class registered extends AppCompatActivity implements View.OnClickListener,NavigationView.OnNavigationItemSelectedListener{
     FirebaseAuth mAuth;
     FirebaseUser muser;
-    Button RegisterUser, back;
+    Button RegisterUser, clear;
     EditText editfullname, editnumber, editemail, editpassword;
     EditText editcourse;
     ProgressBar progressBar;
@@ -78,7 +78,6 @@ public class registered extends AppCompatActivity implements View.OnClickListene
         navigationView=findViewById(R.id.nav_view);
         toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         navigationView.bringToFront();
         ActionBarDrawerToggle toggle=new ActionBarDrawerToggle(this,drawer,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -92,8 +91,8 @@ public class registered extends AppCompatActivity implements View.OnClickListene
         RegisterUser=(Button)findViewById(R.id.RegisterUser);
         RegisterUser.setOnClickListener(this);
 
-        back=(Button)findViewById(R.id.back);
-        back.setOnClickListener(this);
+        clear=(Button)findViewById(R.id.clear);
+        clear.setOnClickListener(this);
 
         editfullname=(EditText)findViewById(R.id.fullname);
         editnumber=(EditText)findViewById(R.id.number);
@@ -109,7 +108,7 @@ public class registered extends AppCompatActivity implements View.OnClickListene
     @Override
     public void onClick(View v) {
         switch(v.getId()){
-            case R.id.back:
+            case R.id.clear:
                 editnumber.setText("");
                 editfullname.setText("");
                 editcourse.setText("");
@@ -125,7 +124,6 @@ public class registered extends AppCompatActivity implements View.OnClickListene
                 break;
         }
     }
-
     private void informations() {
         idnumber=editnumber.getText().toString();
         try {
@@ -136,7 +134,7 @@ public class registered extends AppCompatActivity implements View.OnClickListene
     }
 
     private void getData() throws MalformedURLException {
-        URL url = new URL("https://api.jsonserve.com/qE2oqL");
+        URL url = new URL("https://api.jsonserve.com/ii3iXI");
         new DOTask().execute(url);
     }
 
@@ -186,7 +184,6 @@ public class registered extends AppCompatActivity implements View.OnClickListene
             }
         }
     }
-
     @Override
     public void onBackPressed() {
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -204,12 +201,12 @@ public class registered extends AppCompatActivity implements View.OnClickListene
         String fullname=editfullname.getText().toString().trim();
         String number=editnumber.getText().toString().trim();
         String course=editcourse.getText().toString().trim();
-
-           if (course.isEmpty()) {
+          if (course.isEmpty()) {
             editcourse.setError("Course is required!");
             editcourse.requestFocus();
             return;
-            }
+           }
+
             if (fullname.isEmpty()) {
                 editfullname.setError("Fullname is required!");
                 editfullname.requestFocus();
@@ -246,7 +243,7 @@ public class registered extends AppCompatActivity implements View.OnClickListene
                 return;
             }
             progressBar.setVisibility(View.VISIBLE);
-            mAuth.createUserWithEmailAndPassword(email, password)
+        mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -296,6 +293,11 @@ public class registered extends AppCompatActivity implements View.OnClickListene
             case R.id.admin_result:
                 Intent intent2=new Intent(this,results.class);
                 startActivity(intent2);
+                finish();
+                break;
+            case R.id.admin_chart:
+                Intent intent5=new Intent(this,charting.class);
+                startActivity(intent5);
                 finish();
                 break;
             case R.id.admin_archive:

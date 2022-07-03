@@ -931,6 +931,11 @@ public class results extends AppCompatActivity implements View.OnClickListener,N
                 startActivity(intent2);
                 finish();
                 break;
+            case R.id.admin_chart:
+                Intent intent5=new Intent(this,charting.class);
+                startActivity(intent5);
+                finish();
+                break;
             case R.id.admin_archive:
                 Intent intent3=new Intent(this,archive_votes.class);
                 startActivity(intent3);

@@ -85,14 +85,14 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="152dp"
-        android:layout_height="122dp"
+        android:layout_width="164dp"
+        android:layout_height="144dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintHorizontal_bias="0.028"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.026"
+        app:layout_constraintVertical_bias="0.027"
         app:srcCompat="@drawable/selecprofileadmin" />
 
     <Button
@@ -124,4 +124,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.552"
         tools:Ignore="MissingConstraints" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -166,6 +166,12 @@ public class voter extends AppCompatActivity implements View.OnClickListener,Nav
                     C1.setText(name);
                     P1.setText(party);
                     Picasso.get().load(image).into(candidate1);
+                    if(C1.getText().toString().equals("Default Name")){
+                        candidate1.setEnabled(false);
+                    }
+                    else{
+                        candidate1.setEnabled(true);
+                    }
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
                 }
@@ -190,6 +196,12 @@ public class voter extends AppCompatActivity implements View.OnClickListener,Nav
                     C2.setText(name);
                     P2.setText(party);
                     Picasso.get().load(image).into(candidate2);
+                    if(C2.getText().toString().equals("Default Name")){
+                        candidate2.setEnabled(false);
+                    }
+                    else{
+                        candidate2.setEnabled(true);
+                    }
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
                 }
@@ -214,6 +226,12 @@ public class voter extends AppCompatActivity implements View.OnClickListener,Nav
                     C3.setText(name);
                     P3.setText(party);
                     Picasso.get().load(image).into(candidate3);
+                    if(C3.getText().toString().equals("Default Name")){
+                        candidate3.setEnabled(false);
+                    }
+                    else{
+                        candidate3.setEnabled(true);
+                    }
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
                 }
@@ -238,6 +256,12 @@ public class voter extends AppCompatActivity implements View.OnClickListener,Nav
                     C4.setText(name);
                     P4.setText(party);
                     Picasso.get().load(image).into(candidate4);
+                    if(C4.getText().toString().equals("Default Name")){
+                        candidate4.setEnabled(false);
+                    }
+                    else{
+                        candidate4.setEnabled(true);
+                    }
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
                 }
@@ -263,6 +287,12 @@ public class voter extends AppCompatActivity implements View.OnClickListener,Nav
                     C5.setText(name);
                     P5.setText(party);
                     Picasso.get().load(image).into(candidate5);
+                    if(C5.getText().toString().equals("Default Name")){
+                        candidate5.setEnabled(false);
+                    }
+                    else{
+                        candidate5.setEnabled(true);
+                    }
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
                 }
@@ -287,6 +317,12 @@ public class voter extends AppCompatActivity implements View.OnClickListener,Nav
                     C6.setText(name);
                     P6.setText(party);
                     Picasso.get().load(image).into(candidate6);
+                    if(C6.getText().toString().equals("Default Name")){
+                        candidate6.setEnabled(false);
+                    }
+                    else{
+                        candidate6.setEnabled(true);
+                    }
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
                 }
@@ -311,6 +347,12 @@ public class voter extends AppCompatActivity implements View.OnClickListener,Nav
                     C7.setText(name);
                     P7.setText(party);
                     Picasso.get().load(image).into(candidate7);
+                    if(C7.getText().toString().equals("Default Name")){
+                        candidate7.setEnabled(false);
+                    }
+                    else{
+                        candidate7.setEnabled(true);
+                    }
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
                 }
@@ -335,6 +377,12 @@ public class voter extends AppCompatActivity implements View.OnClickListener,Nav
                     C8.setText(name);
                     P8.setText(party);
                     Picasso.get().load(image).into(candidate8);
+                    if(C8.getText().toString().equals("Default Name")){
+                        candidate8.setEnabled(false);
+                    }
+                    else{
+                        candidate8.setEnabled(true);
+                    }
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
                 }
@@ -359,6 +407,12 @@ public class voter extends AppCompatActivity implements View.OnClickListener,Nav
                     C9.setText(name);
                     P9.setText(party);
                     Picasso.get().load(image).into(candidate9);
+                    if(C9.getText().toString().equals("Default Name")){
+                        candidate9.setEnabled(false);
+                    }
+                    else{
+                        candidate9.setEnabled(true);
+                    }
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
                 }
@@ -383,6 +437,12 @@ public class voter extends AppCompatActivity implements View.OnClickListener,Nav
                     C10.setText(name);
                     P10.setText(party);
                     Picasso.get().load(image).into(candidate10);
+                    if(C10.getText().toString().equals("Default Name")){
+                        candidate10.setEnabled(false);
+                    }
+                    else{
+                        candidate10.setEnabled(true);
+                    }
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
                 }
@@ -407,6 +467,12 @@ public class voter extends AppCompatActivity implements View.OnClickListener,Nav
                     C11.setText(name);
                     P11.setText(party);
                     Picasso.get().load(image).into(candidate111);
+                    if(C11.getText().toString().equals("Default Name")){
+                        candidate111.setEnabled(false);
+                    }
+                    else{
+                        candidate111.setEnabled(true);
+                    }
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
                 }
@@ -431,6 +497,12 @@ public class voter extends AppCompatActivity implements View.OnClickListener,Nav
                     C12.setText(name);
                     P12.setText(party);
                     Picasso.get().load(image).into(candidate112);
+                    if(C12.getText().toString().equals("Default Name")){
+                        candidate112.setEnabled(false);
+                    }
+                    else{
+                        candidate112.setEnabled(true);
+                    }
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
                 }
@@ -455,6 +527,12 @@ public class voter extends AppCompatActivity implements View.OnClickListener,Nav
                     C13.setText(name);
                     P13.setText(party);
                     Picasso.get().load(image).into(candidate113);
+                    if(C13.getText().toString().equals("Default Name")){
+                        candidate113.setEnabled(false);
+                    }
+                    else{
+                        candidate113.setEnabled(true);
+                    }
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
                 }
@@ -479,6 +557,12 @@ public class voter extends AppCompatActivity implements View.OnClickListener,Nav
                     C14.setText(name);
                     P14.setText(party);
                     Picasso.get().load(image).into(candidate114);
+                    if(C14.getText().toString().equals("Default Name")){
+                        candidate114.setEnabled(false);
+                    }
+                    else{
+                        candidate114.setEnabled(true);
+                    }
                 } else {
                     Log.d(TAG, "Data Snapshot is null");
                 }
@@ -493,7 +577,7 @@ public class voter extends AppCompatActivity implements View.OnClickListener,Nav
 
     @Override
     public void onBackPressed() {
-        Intent new_intent = new Intent(this, MainActivity.class);
+        Intent new_intent = new Intent(this, advocacy.class);
         this.startActivity(new_intent);
         finish();
     }
@@ -933,8 +1017,6 @@ public class voter extends AppCompatActivity implements View.OnClickListener,Nav
         });
     }
 
-
-
     private void candidate14() {
         candidate114.setImageResource(R.drawable.voted);
         representative= "Representative B";
@@ -996,7 +1078,6 @@ public class voter extends AppCompatActivity implements View.OnClickListener,Nav
             }
         });
     }
-
 
     private void submit() {
         if (president.isEmpty() || vicepresident.isEmpty()||secretary.isEmpty()||treasurer.isEmpty()||auditor.isEmpty()||pro.isEmpty()||representative.isEmpty()) {

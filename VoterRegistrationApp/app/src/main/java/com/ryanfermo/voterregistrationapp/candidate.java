@@ -5,7 +5,9 @@ public class candidate {
     String Party;
     String Advocacy;
     String Image;
+    public candidate(){
 
+    }
     public candidate(String name, String party, String image, String advocacy) {
         this.Name = name;
         this.Party = party;
